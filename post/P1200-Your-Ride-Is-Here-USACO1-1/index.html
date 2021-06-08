@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1200 [USACO1.1]你的飞碟在这儿Your Ride Is Here | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="取值逼疯一片
+星咏者狂喜（并不
+
+/*P1200 [USACO1.1]你的飞碟在这儿Your Ride Is Here
+  众所周知，在每一个彗星后都有一只UFO。这些UFO时常来收集地球上的忠诚支持者。不幸的是，他们的飞碟每次出行都只能带..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1200 [USACO1.1]你的飞碟在这儿Your Ride Is Here</h2>
+            <div class="post-date">2020-08-15</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1200-Your-Ride-Is-Here-USACO1-1.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>取值逼疯一片</p>
+<p><s>星咏者狂喜（并不</s></p>
+<figure data-type="image" tabindex="1"><img src="https://s1.ax1x.com/2020/08/15/dkA98e.png" alt="dkA98e.png" loading="lazy"></figure>
+<pre><code class="language-cpp">/*P1200 [USACO1.1]你的飞碟在这儿Your Ride Is Here
+  众所周知，在每一个彗星后都有一只UFO。这些UFO时常来收集地球上的忠诚支持者。不幸的是，他们的飞碟每次出行都只能带上一组支持者。因此，他们要用一种聪明的方案让这些小组提前知道谁会被彗星带走。他们为每个彗星起了一个名字，通过这些名字来决定这个小组是不是被带走的那个特定的小组（你认为是谁给这些彗星取的名字呢？）。关于如何搭配的细节会在下面告诉你；
+  你的任务是写一个程序，通过小组名和彗星名来决定这个小组是否能被那颗彗星后面的UFO带走。
+  小组名和彗星名都以下列方式转换成一个数字：最终的数字就是名字中所有字母的积，其中A是1，Z是26。
+  例如，USACO小组就是 21*19*1*3*15=17955。如果小组的数字 mod 47等于彗星的数字 mod 47,你就得告诉这个小组需要准备好被带走！
+  （记住“a mod b”是a除以b的余数；34 mod 10等于44）
+  写出一个程序，读入彗星名和小组名并算出用上面的方案能否将两个名字搭配起来
+  如果能搭配，就输出“GO”，否则输出“STAY”。
+  小组名和彗星名均是没有空格或标点的一串大写字母（不超过66个字母）。
+*/
+//https://www.luogu.com.cn/problem/P1200
+//https://www.luogu.com.cn/record/37054987
+//https://www.luogu.com.cn/record/37056015
+//https://www.luogu.com.cn/record/37056631
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    int ufototal=1,suiseitotal=1;
+    string ufo,suisei;
+    cin&gt;&gt;suisei;
+    for(int i=0;i&lt;suisei.size();i++){//建议用.size()函数，注意取值范围
+        suiseitotal*=(suisei[i]-'@');
+        //cout&lt;&lt;&quot;Total of suisei now is &quot;&lt;&lt;suiseitotal&lt;&lt;endl;
+    }
+    //cout&lt;&lt;suiseitotal&lt;&lt;&quot; MOD 47 = &quot;;
+    suiseitotal%=47;
+    //cout&lt;&lt;suiseitotal&lt;&lt;endl;
+    cin&gt;&gt;ufo;
+    for(int i=0;i&lt;ufo.size();i++){ //建议用.size()函数，注意取值范围
+        ufototal*=ufo[i]-'@';
+        //cout&lt;&lt;&quot;Total of team now is &quot;&lt;&lt;ufototal&lt;&lt;endl;
+    }
+    //cout&lt;&lt;ufototal&lt;&lt;&quot; MOD 47 = &quot;;
+    ufototal%=47;
+    //cout&lt;&lt;ufototal&lt;&lt;endl;
+    if(suiseitotal==ufototal){
+        cout&lt;&lt;&quot;GO&quot;&lt;&lt;endl;
+    }else{
+        cout&lt;&lt;&quot;STAY&quot;&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P2141-Zhu-Xin-Suan-Test/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P2141 珠心算测验
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

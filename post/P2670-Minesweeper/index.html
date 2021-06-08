@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P2670 扫雷游戏 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="XY值弄反，静态调试（？）语句忘删，心态爆炸（
+/*----------------------------------------
++        洛谷OJ    P2670   扫雷游戏       +
++ https://www.l..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P2670 扫雷游戏</h2>
+            <div class="post-date">2020-10-01</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P2670-Minesweeper.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>XY值弄反，静态调试（？）语句忘删，心态爆炸（</p>
+<pre><code class="language-cpp">/*----------------------------------------
++        洛谷OJ    P2670   扫雷游戏       +
++ https://www.luogu.com.cn/problem/P2670 +
+----------------------------------------*/
+//https://www.luogu.com.cn/record/39099059
+#include&lt;iostream&gt;
+using namespace std;
+//参考了 https://www.luogu.com.cn/blog/wxw/solution-p2670 声称不会TLE的代码
+//不会用gdb的一定要记得写完代码把debug用的语句 删 掉 哦
+int main(){
+    char boom;
+    bool sign[105][105]={0};
+    int xlimit,ylimit;
+    cin&gt;&gt;ylimit&gt;&gt;xlimit; //输入y值x值限度 不要弄反！！！！！
+    for(int i=1;i&lt;=ylimit;i++){
+        for(int n=1;n&lt;=xlimit;n++){
+            cin&gt;&gt;boom; //输入地雷图
+            if(boom=='*'){
+                sign[n][i]=1;//地雷标记
+            }
+        }
+    }
+    for(int i=1;i&lt;=ylimit;i++){
+        for(int o=1;o&lt;=xlimit;o++){
+            if(sign[o][i]==1){
+                cout&lt;&lt;&quot;*&quot;;
+            }else cout&lt;&lt;sign[o-1][i-1]+sign[o-1][i]+sign[o-1][i+1]+sign[o][i-1]+sign[o][i+1]+sign[o+1][i-1]+sign[o+1][i]+sign[o+1][i+1];
+        }
+        cout&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1553-Overturn-Number-Advanced/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1553 数字反转（升级版）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

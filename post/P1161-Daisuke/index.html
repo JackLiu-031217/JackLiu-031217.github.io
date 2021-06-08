@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1161 开灯 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="啥也不会，啥也不是
+就现在这种练习强度，CSP2020有点悬啊……
+好高骛远，小心闪着腰……
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    bool light[..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1161 开灯</h2>
+            <div class="post-date">2020-09-26</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1161-Daisuke.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>啥也不会，啥也不是</p>
+<p>就现在这种练习强度，CSP2020有点悬啊……</p>
+<p>好高骛远，小心闪着腰……</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    bool light[2000001]={0};
+    int t,n;
+    long long T; //一定要记得弄一个long long 数存相乘的结果，否则分分钟溢出
+    double a;
+    cin&gt;&gt;n;
+    for(int i=1;i&lt;=n;i++){
+        cin&gt;&gt;a&gt;&gt;t;
+        for(int o=1;o&lt;=t;o++){
+            T=a*o;
+            if(light[T]==false){ //布尔变量标识
+                light[T]=true;
+            }else light[T]=false;
+        }
+    }
+    for(int i=1;;i++){
+        if(light[i]==true){
+            cout&lt;&lt;i&lt;&lt;endl;
+            break;
+        }
+    }
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1125-Silly-Monkey/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1125 笨小猴
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

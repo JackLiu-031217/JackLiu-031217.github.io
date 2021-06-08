@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P5015 标题统计 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="在学校机房做的。
+//凯凯刚写了一篇美妙的作文，请问这篇作文的标题中有多少个字符？ 
+//注意：标题中可能包含大、小写英文字母、数字字符、空格和换行符。统计标题字 符数时，空格和换行符不计算在内。
+//输入文件只有一行，一个字符串 ss。
+..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P5015 标题统计</h2>
+            <div class="post-date">2020-08-03</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P5015-Title-Statistics.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>在学校机房做的。</p>
+<pre><code class="language-cpp">//凯凯刚写了一篇美妙的作文，请问这篇作文的标题中有多少个字符？ 
+//注意：标题中可能包含大、小写英文字母、数字字符、空格和换行符。统计标题字 符数时，空格和换行符不计算在内。
+//输入文件只有一行，一个字符串 ss。
+//输出文件只有一行，包含一个整数，即作文标题的字符数（不含空格和换行符）。
+//https://www.luogu.com.cn/record/34976915
+//https://www.luogu.com.cn/record/34976929
+//https://www.luogu.com.cn/record/34976938
+//https://www.luogu.com.cn/record/34976962
+//https://www.luogu.com.cn/record/34977007
+#include&lt;iostream&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int main(){
+	int ans=0;
+	char s[5];
+	gets(s); //stdio.h或cstdio,适用于char变量,切忌string
+	int lengths=strlen(s);//cstring
+	for(int i=0;i&lt;lengths;i++){
+		if(s[i]&gt;='a' &amp;&amp; s[i]&lt;='z'){
+			ans++;
+		}
+		if(s[i]&gt;='A' &amp;&amp; s[i]&lt;='Z'){
+			ans++;
+		}
+		if(s[i]&gt;='0' &amp;&amp; s[i]&lt;='9'){
+			ans++;
+		}
+	}
+	cout&lt;&lt;ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+<pre><code></code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P5738-Singing-Match/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P5738 【深基7.例4】歌唱比赛
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

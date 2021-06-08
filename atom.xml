@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://just-prog.github.io</id>
+    <title>Just Prog</title>
+    <updated>2021-06-08T05:59:33.439Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://just-prog.github.io"/>
+    <link rel="self" href="https://just-prog.github.io/atom.xml"/>
+    <subtitle>Coding with Love and Peace</subtitle>
+    <logo>https://just-prog.github.io/images/avatar.png</logo>
+    <icon>https://just-prog.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, Just Prog</rights>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P3156 【深基15.例1】询问学号]]></title>
+        <id>https://just-prog.github.io/post/P3156-Asking-For-Student-ID-Number/</id>
+        <link href="https://just-prog.github.io/post/P3156-Asking-For-Student-ID-Number/">
+        </link>
+        <updated>2021-06-08T05:49:32.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P1067 [NOIP2009 普及组] 多项式输出]]></title>
+        <id>https://just-prog.github.io/post/P1067-Polynomial-Output-NOIP2009/</id>
+        <link href="https://just-prog.github.io/post/P1067-Polynomial-Output-NOIP2009/">
+        </link>
+        <updated>2021-06-05T21:46:12.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P1540 [NOIP2010 提高组] 机器翻译]]></title>
+        <id>https://just-prog.github.io/post/P1540-Machine-Translation-NOIP2010/</id>
+        <link href="https://just-prog.github.io/post/P1540-Machine-Translation-NOIP2010/">
+        </link>
+        <updated>2021-06-05T21:33:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P1031 [NOIP2002 提高组] 均分纸牌]]></title>
+        <id>https://just-prog.github.io/post/P1031-Evenly-Distribute-Cards-NOIP2002/</id>
+        <link href="https://just-prog.github.io/post/P1031-Evenly-Distribute-Cards-NOIP2002/">
+        </link>
+        <updated>2021-02-24T00:22:56.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P1003 [NOIP2011 提高组] 铺地毯]]></title>
+        <id>https://just-prog.github.io/post/P1003-Lay-Carpets-NOIP2011-DAY1/</id>
+        <link href="https://just-prog.github.io/post/P1003-Lay-Carpets-NOIP2011-DAY1/">
+        </link>
+        <updated>2021-02-19T01:21:33.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P1328 生活大爆炸版石头剪刀布  [NOIP2014 提高组]]]></title>
+        <id>https://just-prog.github.io/post/P1328-Rock-Paper-Scissors-Big-Bang-ver-NOIP2014/</id>
+        <link href="https://just-prog.github.io/post/P1328-Rock-Paper-Scissors-Big-Bang-ver-NOIP2014/">
+        </link>
+        <updated>2021-02-03T01:43:50.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P1059 明明的随机数]]></title>
+        <id>https://just-prog.github.io/post/P1059-Ming-s-Random-Number/</id>
+        <link href="https://just-prog.github.io/post/P1059-Ming-s-Random-Number/">
+        </link>
+        <updated>2020-10-06T08:04:20.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P5729 【深基5.例7】工艺品制作]]></title>
+        <id>https://just-prog.github.io/post/P5729-Sakuzyo-Beam/</id>
+        <link href="https://just-prog.github.io/post/P5729-Sakuzyo-Beam/">
+        </link>
+        <updated>2020-10-04T12:31:23.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P5739 【深基7.例7】计算阶乘]]></title>
+        <id>https://just-prog.github.io/post/P5739-Russian-Taowa-without-for-while/</id>
+        <link href="https://just-prog.github.io/post/P5739-Russian-Taowa-without-for-while/">
+        </link>
+        <updated>2020-10-04T09:47:43.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P1319 压缩技术]]></title>
+        <id>https://just-prog.github.io/post/P1319-Seven-Zip/</id>
+        <link href="https://just-prog.github.io/post/P1319-Seven-Zip/">
+        </link>
+        <updated>2020-10-03T13:59:38.000Z</updated>
+    </entry>
+</feed>

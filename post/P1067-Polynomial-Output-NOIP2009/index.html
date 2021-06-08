@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1067 [NOIP2009 普及组] 多项式输出 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="懵
+//P1067 [NOIP2009 普及组] 多项式输出
+//https://www.luogu.com.cn/problem/P1067
+
+/*一元$n$次多项式可用如下的表达式表示：
+  ![](https://cdn.luogu...." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1067 [NOIP2009 普及组] 多项式输出</h2>
+            <div class="post-date">2021-06-06</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1067-Polynomial-Output-NOIP2009.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>懵</p>
+<pre><code class="language-cpp">//P1067 [NOIP2009 普及组] 多项式输出
+//https://www.luogu.com.cn/problem/P1067
+
+/*一元$n$次多项式可用如下的表达式表示：
+  ![](https://cdn.luogu.com.cn/upload/pic/26.png)
+  $$f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots +a_1x+a_0,a_n\ne 0$$
+  其中，$a_ix^i$称为$i$次项，$a_i$ 称为$i$次项的系数。给出一个一元多项式各项的次数和系数，请按照如下规定的格式要求输出该多项式：
+  1. 多项式中自变量为$ x$，从左到右按照次数递减顺序给出多项式。
+  2. 多项式中只包含系数不为$0$的项。
+  3. 如果多项式$n$次项系数为正，则多项式开头不出现“+”号，如果多项式$n$次项系数为负，则多项式以“-”号开头。
+  4.对于不是最高次的项，以“+”号或者“-”号连接此项与前一项，分别表示此项系数为正或者系数为负。
+  紧跟一个正整数，表示此项系数的绝对值（如果一个高于$0$次的项，其系数的绝对值为$1$，则无需输出 $1$）。
+  如果$x$的指数大于$1$，则接下来紧跟的指数部分的形式为“$x^b$”，其中 $b $为 $x $的指数；
+  如果 $x$的指数为$ 1$，则接下来紧跟的指数部分形式为“$x$”；
+  如果 $x$ 的指数为$ 0$，则仅需输出系数即可。
+  5.多项式中，多项式的开头、结尾不含多余的空格。
+*/
+
+//https://www.luogu.com.cn/record/49472475
+//https://www.luogu.com.cn/record/49472703
+//https://www.luogu.com.cn/record/49478920
+//https://www.luogu.com.cn/record/49479138
+//https://www.luogu.com.cn/record/49523093
+
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+	int n;
+	cin&gt;&gt;n;
+	for(int i=n;i&gt;=0;i--){
+		string num;
+		bool jian=0;
+		bool o=0;
+		cin&gt;&gt;num;
+		if(num==&quot;0&quot;){
+			continue;
+		}
+		if(num==&quot;1&quot;){
+			o=1;
+			num=&quot;x&quot;;
+		}
+		if(num[0]=='-'){
+			jian=1;
+			if(num==&quot;-1&quot;){
+				o=1;
+				num=&quot;-x&quot;;
+			}
+		}
+		if(i==n){
+			if(o){
+				cout&lt;&lt;num&lt;&lt;&quot;^&quot;&lt;&lt;i;
+			}else cout&lt;&lt;num&lt;&lt;&quot;x^&quot;&lt;&lt;i;
+		}else if(i==1){
+			if(jian==0){
+				cout&lt;&lt;&quot;+&quot;;
+			}
+			if(o){
+				cout&lt;&lt;&quot;x&quot;;
+			}else cout&lt;&lt;num&lt;&lt;&quot;x&quot;;
+		}else if(i==0){
+			if(jian==0&amp;&amp;o){
+				cout&lt;&lt;&quot;+1&quot;;
+			}else if(jian&amp;&amp;o){
+				cout&lt;&lt;&quot;-1&quot;;
+			}else if(jian==0){
+				cout&lt;&lt;&quot;+&quot;&lt;&lt;num;
+			}else cout&lt;&lt;num;
+		}else{
+			if(jian==0){
+				cout&lt;&lt;&quot;+&quot;;
+			}
+			if(o){
+				cout&lt;&lt;num&lt;&lt;&quot;^&quot;&lt;&lt;i;
+			}else cout&lt;&lt;num&lt;&lt;&quot;x^&quot;&lt;&lt;i;
+		}
+	}
+	cout&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1540-Machine-Translation-NOIP2010/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1540 [NOIP2010 提高组] 机器翻译
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P5729 【深基5.例7】工艺品制作 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="
+ 
+//洛谷OJ P5729 【深基5.例7】工艺品制作
+//现有一个长宽高分别为 w,x,h(1 &lt;= w,x,h &lt;= 20) 组成的实心玻璃立方体，可以认为是由 1*1*1 的数个小方块组成的，
+//每个小方块都有一个坐..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P5729 【深基5.例7】工艺品制作</h2>
+            <div class="post-date">2020-10-04</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P5729-Sakuzyo-Beam.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1403449766&auto=1&height=66"></iframe>
+<iframe src="//player.bilibili.com/player.html?aid=35369065&bvid=BV1nb411A7wd&cid=61998252&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" height="480" width="854"> </iframe>
+<pre><code class="language-cpp">//洛谷OJ P5729 【深基5.例7】工艺品制作
+//现有一个长宽高分别为 w,x,h(1 &lt;= w,x,h &lt;= 20) 组成的实心玻璃立方体，可以认为是由 1*1*1 的数个小方块组成的，
+//每个小方块都有一个坐标 ( i,j,k ) .现在需要进行 $q(q\le 100)$ 次切割。每次切割给出 (x1,y1,z1),(x2,y2,z2) 这 6 个参数，
+//保证 x1 &lt;= x2，y1 &lt;= y2，z1 &lt;= z2；
+//每次切割时，使用激光工具切出一个立方体空洞，空洞的壁平行于立方体的面，空洞的对角点就是给出的切割参数的两个点。
+//换句话说，所有满足  x1 &lt;= i &lt;= x2，y1 &lt;= j &lt;= y2，z1 &lt;= k &lt;= z2 的小方块 (i,j,k) 的点都会被激光蒸发。
+//例如有一个  4*4*4 的大方块，其体积为 64；给出参数 (1,1,1),(2,2,2) 时，中间的 8 块小方块就会被蒸发，
+//剩下 56 个小方块。现在想知道经过所有切割操作后，剩下的工艺品还剩下多少格小方块的体积？
+//https://www.luogu.com.cn/record/39267185
+//----*SAKUZYO BEAM*----&gt;
+#include&lt;iostream&gt;
+using namespace std;
+bool sq[30][30][30]={0};
+int main(){
+    int c,k,g;
+    int sakuzyotime;
+    cin&gt;&gt;c&gt;&gt;k&gt;&gt;g&gt;&gt;sakuzyotime;
+    while(sakuzyotime--){
+        int sakuzyox1,sakuzyox2,sakuzyoy1,sakuzyoy2,sakuzyoz1,sakuzyoz2; //削除次数,削除坐标
+        cin&gt;&gt;sakuzyox1&gt;&gt;sakuzyoy1&gt;&gt;sakuzyoz1&gt;&gt;sakuzyox2&gt;&gt;sakuzyoy2&gt;&gt;sakuzyoz2;
+        for(int x=sakuzyox1;x&lt;=sakuzyox2;x++){
+            for(int y=sakuzyoy1;y&lt;=sakuzyoy2;y++){
+                for(int z=sakuzyoz1;z&lt;=sakuzyoz2;z++){
+                    sq[x][y][z]=1;
+                }
+            }
+        }
+    }
+    int ans=0;
+    for(int x=1;x&lt;=c;x++){
+        for(int y=1;y&lt;=k;y++){
+            for(int z=1;z&lt;=g;z++){
+                if(sq[x][y][z]==0){
+                    ans++;
+                }
+            }
+        }
+    }
+    cout&lt;&lt;ans&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>I will kill.</p>
+<p>I will destroy the world.</p>
+<p>No matter what you do, I don't stop.</p>
+<p>I'm the only one who's right.</p>
+<p>I will kill.</p>
+<p>I will destroy the world.</p>
+<p>No matter what you do, I don't stop.</p>
+<p>It is what it is.</p>
+<p>It is what it is.</p>
+<p>It is not... It's not my fault.</p>
+<p>----<em>SAKUZYO BEAM</em>----&gt;</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P5739-Russian-Taowa-without-for-while/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P5739 【深基7.例7】计算阶乘
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1328 生活大爆炸版石头剪刀布  [NOIP2014 提高组] | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="先前用的是switch-case判断加分情况
+但是用的不熟练直接报废
+二维数组是个好东西。
+/*----------------------------------------
+                洛谷 P1328
+      ..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1328 生活大爆炸版石头剪刀布  [NOIP2014 提高组]</h2>
+            <div class="post-date">2021-02-03</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1328-Rock-Paper-Scissors-Big-Bang-ver-NOIP2014.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>先前用的是switch-case判断加分情况</p>
+<p><s>但是用的不熟练直接报废</s></p>
+<p>二维数组是个好东西。</p>
+<pre><code class="language-cpp">/*----------------------------------------
+                洛谷 P1328
+            生活大爆炸版石头剪刀布
+              NOIP2014 提高组
+----------------------------------------*/
+//https://www.luogu.com.cn/problem/P1328
+//https://www.luogu.com.cn/record/46035470
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    int la,lb; //周期长度
+    int na[201],nb[201]; //周期内出拳状况
+    int t; //出拳次数
+
+    cin&gt;&gt;t&gt;&gt;la&gt;&gt;lb;
+    //输入出拳规律
+    for(int i=1;i&lt;=la;i++){
+        cin&gt;&gt;na[i];
+    }
+    for(int i=1;i&lt;=lb;i++){
+        cin&gt;&gt;nb[i];
+    }
+
+    //胜负判断
+    int as=0,bs=0; //分数变量
+    int al=1,bl=1; //当前出拳位置
+    int a[5][5]={{0,0,1,1,0},{1,0,0,1,0},{0,1,0,0,1},{0,0,1,0,1},{1,1,0,0,0}};
+    for(int i=1;i&lt;=t;i++){ //在有限次数内循环猜拳
+        //以下为先前旧式判断方法,使用switch-case组合
+        /*
+        if(na[al]==nb[bl]){ //平手
+            al++;
+            bl++;
+            if(al&gt;la)
+                al=1;
+            if(bl&gt;lb)
+                bl=1;
+            continue;
+        }
+        */
+
+        //胜负判断
+        //方法很暴力很麻烦但希望能管用（
+        //残酷的事实证明坚决不能用switch
+        //case条件整不好就全抓瞎了（
+        /*
+        if(na[al]==0) //小A出剪刀
+            switch(nb[bl]){
+                case 1:bs++;
+                case 2:as++;
+                case 3:as++;
+                case 4:bs++;
+            }
+        if(na[al]==1) //小A出石头
+        //从这里开始洛谷自己带的题图就没有示例了，需要自己推算。
+        //建议反推。
+            switch(nb[bl]){
+                case 0:as++;
+                case 2:bs++;
+                case 3:as++;
+                case 4:bs++;
+            }
+        if(na[al]==2) //小A出布
+            switch(nb[bl]){
+                case 0:bs++;
+                case 1:as++;
+                case 3:bs++;
+                case 4:as++;
+            }
+        if(na[al]==3) //小A出蜥蜴人
+            switch(nb[bl]){
+                case 0:bs++;
+                case 1:bs++;
+                case 2:as++;
+                case 4:as++;
+            }
+        if(na[al]==4) //小A出斯派克
+            switch(nb[bl]){
+                case 0:as++;
+                case 1:as++;
+                case 2:bs++;
+                case 3:bs++;
+            }
+        al++;
+        bl++;
+        if(al&gt;la)
+            al=1;
+        if(bl&gt;lb)
+            bl=1;
+        */
+    
+        //重制版
+        //使用二维数组加分
+        //看着很乱（
+        if(a[na[al]][nb[bl]]==0){
+            if(na[al]==nb[bl]){
+                al++;bl++;
+                if(al&gt;la) al=1;
+                if(bl&gt;lb) bl=1;
+                continue;
+            }
+            else bs++;
+        }
+        else if(a[na[al]][nb[bl]]==1){
+            as++;
+        }
+        al++;bl++;
+        if(al&gt;la) al=1;
+        if(bl&gt;lb) bl=1;
+    }
+    cout&lt;&lt;as&lt;&lt;&quot; &quot;&lt;&lt;bs&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+<p>这道题拖了小半年了……</p>
+<p>这半年事情太多变化太大了……</p>
+<p>CSP2020落选了</p>
+<p>整个人都快废了……</p>
+<p><strong>复健中</strong></p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.luogu.com.cn/upload/image_hosting/10tohe6x.png" alt="落选之后发的牢骚 (托管于洛谷图床)" loading="lazy"></figure>
+<p><strong>希望我能好起来吧.</strong></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1059-Ming-s-Random-Number/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1059 明明的随机数
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

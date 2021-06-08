@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1308 统计单词数 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="要多想。
+/*--------------------------------------------------------------------------------
+  P1308 统计单词数
+  一般的文本编辑器都有查找单词的功..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1308 统计单词数</h2>
+            <div class="post-date">2020-08-19</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1308-Counting-The-Word.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>要多想。</p>
+<pre><code class="language-cpp">/*--------------------------------------------------------------------------------
+  P1308 统计单词数
+  一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，
+  有的还能统计出特定单词在文章中出现的次数。
+  现在，请你编程实现这一功能，具体要求是：
+  给定一个单词，请你输出它在给定的文章中出现的次数和第一次出现的位置。
+  注意：匹配单词时，不区分大小写，但要求完全匹配，
+  即给定单词必须与文章中的某一独立单词在不区分大小写的情况下完全相同，
+  如果给定单词仅是文章中某一单词的一部分则不算匹配。
+--------------------------------------------------------------------------------*/
+//https://www.luogu.com.cn/record/37271277
+//感谢@Kio_ (ID:127925)
+//感谢@clock钟0622 (ID:323183)
+#include&lt;iostream&gt;
+#include&lt;cstring&gt;
+using namespace std;
+string sentence,keyword;
+string cutsentence[1000000];
+string cutfull[1000000];
+int main(){
+    getline(cin,keyword); //读入数据
+    //cout&lt;&lt;&quot;Keyword=&quot;&lt;&lt;keyword&lt;&lt;endl;
+    getline(cin,sentence);
+    for(int i=0;i&lt;keyword.size();i++){ //谨 防 越 界 操 作 --- @Kio_
+        if(keyword[i]&gt;='A'&amp;&amp;keyword[i]&lt;='Z'){
+            keyword[i]+=32; //小写转换
+        }
+    }
+    for(int i=0;i&lt;sentence.size();i++){ //下同
+        if(sentence[i]&gt;='A'&amp;&amp;sentence[i]&lt;='Z'){
+            sentence[i]+=32; //小写转换
+        }
+    }
+    int blkflag=0; //blkflag:空格数量，反推单词数
+    for(int i=0;i&lt;sentence.size();i++){
+        if(sentence[i]==' '){
+            blkflag++; //标记空格数量
+        }
+    }
+    int cutnum=blkflag+1,cutflag=0; //cutnum:单词切片数量 cutflag:切片起始点位置 
+    int count=0;    //count:切片序号 --- @clock钟0622
+    //for(int i=0;i&lt;cutnum;i++){ // --- @Kio_
+        for(int j=cutflag;j&lt;=sentence.size();j++){ //从起始点开始对
+            if(sentence[j]==' '||sentence[j]=='\0'){ //划定范围
+                for(int k=cutflag;k&lt;j;k++){ //确保在0&lt;k&lt;j范围内复制
+                    cutsentence[count]+=sentence[k]; //大数组-&gt;小数组 @clock钟0622
+                }
+                //&lt;&lt;&quot;cutsentence[&quot;&lt;&lt;count&lt;&lt;&quot;] = &quot;&lt;&lt;cutsentence[count]&lt;&lt;endl; // Debug --- @clock钟0622
+                //cutflag=j; //复制完把起始点调到空格后面的字母
+                count++;
+                cutflag=j+1; // 要的 --- @clock钟0622
+                //cout&lt;&lt;&quot;Begin with point &quot;&lt;&lt;cutflag&lt;&lt;&quot; .&quot;&lt;&lt;endl;
+                //break; //退出本轮循环 --- 去掉 @clock钟0622
+            }
+        }
+    //} // --- @clock钟0622
+    int sameflag=0,samewordflag=0,firstflagnum=0;
+    bool firstflag=false;
+    //int lencut; //@Kio_
+    for(int i=0;i&lt;cutnum;i++){ //以切片数为界限循环
+      //if(cutsentence[i].size()==keyword.size()){
+        if(cutsentence[i]==keyword){ // 若完全相同 --- 更改 @clock钟0622
+            samewordflag++;
+            if(firstflag==false){
+                if(i&gt;=1){
+                    for(int o=0;o&lt;i;o++){
+                        firstflagnum+=cutsentence[o].size();
+                    }
+                    firstflagnum+=i;
+                }else if(i=0){
+                    firstflagnum+=1;
+                }
+                firstflag=true;
+            }
+        }
+    }
+    if(samewordflag!=0){ //如果有相同的单词出现
+        cout&lt;&lt;samewordflag&lt;&lt;&quot; &quot;&lt;&lt;firstflagnum&lt;&lt;endl; //输出相同个数与初次出现的标识点
+    }else if(samewordflag==0){ //如果一个相同的也没有
+        cout&lt;&lt;&quot;-1&quot;&lt;&lt;endl; //输出&quot;-1&quot;
+    }
+    return 0; //结束
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1028-Calculate-Number/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1028 数的计算
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

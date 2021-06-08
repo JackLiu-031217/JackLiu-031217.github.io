@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1031 [NOIP2002 提高组] 均分纸牌 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="很惭愧啊，只做了一点微小的工作（指后半段逻辑混乱抄借鉴题解）
+丢人
+/*-------------------------------------
+    P1031 [NOIP2002 提高组] 均分纸牌
+        NOIP 200..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1031 [NOIP2002 提高组] 均分纸牌</h2>
+            <div class="post-date">2021-02-24</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1031-Evenly-Distribute-Cards-NOIP2002.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>很惭愧啊，只做了一点微小的工作（指后半段逻辑混乱<s>抄</s>借鉴题解）<br>
+<strong>丢人</strong></p>
+<pre><code class="language-cpp">/*-------------------------------------
+    P1031 [NOIP2002 提高组] 均分纸牌
+        NOIP 2002 提高组第一题
+--------------------------------------*/
+//https://www.luogu.com.cn/problem/P1031
+//https://www.luogu.com.cn/record/47010311
+//https://www.luogu.com.cn/record/47010349
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    int n; //纸牌堆数
+    cin&gt;&gt;n;
+    int p[n]; //每一堆纸牌包含的纸牌数目
+    int z=0; //纸牌总数
+    int ans=0; //移动次数
+    for(int i=1;i&lt;=n;i++){
+        cin&gt;&gt;p[i];
+        z+=p[i];
+    }
+    z/=n;
+
+    //以下部分主要架构来自于 https://www.luogu.com.cn/blog/user262/solution-p1031
+    //感谢前辈 谁懂谁伤心 于 2013-11-22 发布的题解
+    //前辈的智慧不可小视
+    //本人的程序性思维还有待提升
+    
+    for(int i=1;i&lt;=n;i++){
+        p[i]-=z;
+    }
+
+    for(int i=1;i&lt;=n;i++){
+        if(p[i]==0){
+            continue;
+        }
+        p[i+1]+=p[i];
+        ans++;
+    }
+    cout&lt;&lt;ans;
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1003-Lay-Carpets-NOIP2011-DAY1/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1003 [NOIP2011 提高组] 铺地毯
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

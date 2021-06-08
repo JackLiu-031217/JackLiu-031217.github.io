@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1424 小鱼的航程(改进版) | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="问题链接
+
+//洛谷 P1424 小鱼的路程（改进版）by yeszy
+//https://www.luogu.com.cn/problem/P1424
+//https://www.luogu.com.cn/record/30322448
+..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1424 小鱼的航程(改进版)</h2>
+            <div class="post-date">2020-02-08</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1424-The-Journey-Of-Fishes-Plus-Ver.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p><a href="https://www.luogu.com.cn/problem/P1424">问题链接</a></p>
+<hr>
+<pre><code class="language-cpp">//洛谷 P1424 小鱼的路程（改进版）by yeszy
+//https://www.luogu.com.cn/problem/P1424
+//https://www.luogu.com.cn/record/30322448
+//这位大佬的题总是深入人心呢（
+#include&lt;bits/stdc++.h&gt; //万能通用符（
+using namespace std;   //那么为什么它通用呢？你把它找到，打开，马上就明白了（
+int main(){
+	unsigned long long n,lucheng; //超大wèishù路程（cue一下weishu老师）
+	int x,loop; //整数的周x与循环loop次数
+	lucheng=0; //路程归零
+	cin&gt;&gt;x&gt;&gt;n; //输入数值
+	for(loop=0;loop&lt;n;loop++) //循环更改星期数
+	{ 
+		if((x!=6)&amp;&amp;(x!=7)) //切记“同时”的符号是&amp;&amp;！不是||!
+		{                //如果符号错误会直接导致下文多加2次数！（磨叽了三天得到的结论
+			lucheng+=250; //如果不是星期六/日则走250m
+		}
+		if(x==7) //到了星期天
+		{
+			x=1; //就是星期一
+		}
+		else //剩下的日子
+		{
+			x++; //星期x+1
+		}
+	}
+	cout&lt;&lt;lucheng; //一切结束后输出结果
+	return 0; //胜利是必然的嘛，怎么，有什么不满吗？（
+}
+</code></pre>
+<hr>
+<p>被cue的那位大佬：</p>
+<p>· <a href="https://www.zhihu.com/people/tian-weishu">weishu - 知乎</a></p>
+<p>· <a href="https://github.com/tiann">tiann (weishu) · GitHub</a></p>
+<p>· <a href="https://www.taichi-app.com/">太极官网-太极app，开启全新的XPOSED模块使用体验</a></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1423-Yu-Is-Swimming/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1423 小玉在游泳
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

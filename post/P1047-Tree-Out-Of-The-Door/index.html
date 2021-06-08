@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1047 校门外的树 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+#include&lt;iomanip&gt;
+#include&lt;cmath&gt;
+#include&lt;cstring&gt;..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1047 校门外的树</h2>
+            <div class="post-date">2020-07-06</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1047-Tree-Out-Of-The-Door.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <pre><code class="language-cpp">#include&lt;iostream&gt;
+#include&lt;algorithm&gt;
+#include&lt;iomanip&gt;
+#include&lt;cmath&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int main(){
+    int l,subnum,subhead,subtail,treelocate,treeflag[10001],treenonflag=0;
+    /*
+    subnum:地铁站数量,subhead:占用区域头,subtail:占用区域尾,treelocate:树位置,treeflag[]:标记是否被占用,treenonflag:未被占用的树木的数目
+    */
+    cin&gt;&gt;l&gt;&gt;subnum;
+    for(treelocate=0;treelocate&lt;=l;treelocate++){
+        treeflag[treelocate]=0;//初始化
+        //cout&lt;&lt;&quot;Debuging:l=&quot;&lt;&lt;l&lt;&lt;&quot;,locate=&quot;&lt;&lt;treelocate&lt;&lt;&quot;,treeflag=&quot;&lt;&lt;treeflag[treelocate]&lt;&lt;endl;
+    }
+    for(int i=1;i&lt;=subnum;i++){//请注意，可以i=1,i&lt;subnum，也可以i=0,i&lt;subnum-1（一句废话）
+        cin&gt;&gt;subhead&gt;&gt;subtail;
+        //cout&lt;&lt;&quot;Debuging:head=&quot;&lt;&lt;subhead&lt;&lt;&quot;,end=&quot;&lt;&lt;subtail&lt;&lt;endl;
+        for(treelocate=subhead;treelocate&lt;=subtail;treelocate++){
+            if(treeflag[treelocate]==0){
+                treeflag[treelocate]=1;//符合条件，进行标记
+            }
+            //cout&lt;&lt;&quot;locate=&quot;&lt;&lt;treelocate&lt;&lt;&quot;,flag=&quot;&lt;&lt;treeflag[treelocate]&lt;&lt;endl;
+        }
+    }
+    for(treelocate=0;treelocate&lt;=l;treelocate++){
+        if(treeflag[treelocate]==0){
+            treenonflag+=1;//找到没被标记的个数
+            //cout&lt;&lt;&quot;Debuging:treenonflag=&quot;&lt;&lt;treenonflag&lt;&lt;endl;
+        }
+    }
+    cout&lt;&lt;treenonflag&lt;&lt;endl;//输出
+    //如果不会用gdb,cout式debug是你不二的选择（
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P5708-Triangle/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P5708 【深基2.习2】三角形面积
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

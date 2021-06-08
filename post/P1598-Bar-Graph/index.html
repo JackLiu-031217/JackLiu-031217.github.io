@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1598 垂直柱状图 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="刚开始全是RE……
+后来才发现爆栈了……
+#include&lt;iostream&gt;
+using namespace std;
+//以下数组需要开成全局数组，以免堆在main函数中爆栈
+int num[27]={0},maxx;
+ch..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1598 垂直柱状图</h2>
+            <div class="post-date">2020-08-16</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1598-Bar-Graph.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>刚开始全是RE……</p>
+<p>后来才发现爆栈了……</p>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+//以下数组需要开成全局数组，以免堆在main函数中爆栈
+int num[27]={0},maxx;
+char star[101][101];
+string tmp1,tmp2,tmp3,tmp4;
+
+int main(){
+    //getline:此函数可读取整行，包括前导和嵌入的空格，并将其存储在字符串对象中
+    getline(cin,tmp1);
+    getline(cin,tmp2);
+    getline(cin,tmp3);
+    getline(cin,tmp4);
+
+    //计数
+    for(int i=0;i&lt;tmp1.size();i++){ //i:y轴 j:x轴
+        if(tmp1[i]&gt;='A'&amp;&amp;tmp1[i]&lt;='Z'){
+            num[tmp1[i]-'A'+1]++;
+        }
+    }
+    for(int i=0;i&lt;tmp2.size();i++){
+        if(tmp2[i]&gt;='A'&amp;&amp;tmp2[i]&lt;='Z'){
+            num[tmp2[i]-'A'+1]++;
+        }
+    }
+    for(int i=0;i&lt;tmp3.size();i++){
+        if(tmp3[i]&gt;='A'&amp;&amp;tmp3[i]&lt;='Z'){
+            num[tmp3[i]-'A'+1]++;
+        }
+    }
+    for(int i=0;i&lt;tmp4.size();i++){
+        if(tmp4[i]&gt;='A'&amp;&amp;tmp4[i]&lt;='Z'){
+            num[tmp4[i]-'A'+1]++;
+        }
+    }
+    
+    //比较
+    for(int i=1;i&lt;=26;i++){
+        maxx=max(maxx,num[i]);
+    }
+    //字符注入
+    for(int i=1;i&lt;=26;i++){
+        for(int j=maxx;j&gt;=maxx-num[i]+1;j--){
+            star[j][i]='*'; //加星号
+        }
+        for(int j=maxx-num[i];j&gt;=1;j--){
+            star[j][i]=' '; //加空格
+        }
+        star[maxx+1][i]=i+'A'-1;
+    }
+    for(int i=1;i&lt;=maxx+1;i++){
+        for(int j=1;j&lt;=51;j++){
+            if(j%2==0){
+                cout&lt;&lt;&quot; &quot;; //加空格
+                continue;
+            }
+            cout&lt;&lt;star[i][j/2+1];
+        }
+        cout&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1200-Your-Ride-Is-Here-USACO1-1/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1200 [USACO1.1]你的飞碟在这儿Your Ride Is Here
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

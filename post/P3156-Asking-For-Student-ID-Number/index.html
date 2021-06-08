@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P3156 【深基15.例1】询问学号 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="的第一题
+除此之外无一能做（
+太弱小了——没有力量——
+
+//P3156 【深基15.例1】询问学号
+//题目提供者 深入浅出
+//难度 入门
+//https://www.luogu.com.cn/problem/P3156
+
+//有 n(..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P3156 【深基15.例1】询问学号</h2>
+            <div class="post-date">2021-06-08</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P3156-Asking-For-Student-ID-Number.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p><img src="https://www.luogu.com.cn/training/113" alt="【数据结构1-1】线性表" loading="lazy">的第一题</p>
+<p>除此之外无一能做（</p>
+<p><s>太弱小了——没有力量——</s></p>
+<figure data-type="image" tabindex="1"><img src="https://just-prog.github.io/post-images/1623131520656.png" alt="" loading="lazy"></figure>
+<pre><code class="language-cpp">//P3156 【深基15.例1】询问学号
+//题目提供者 深入浅出
+//难度 入门
+//https://www.luogu.com.cn/problem/P3156
+
+//有 n(n &lt;= 2 * 10^6) 名同学陆陆续续进入教室。我们知道每名同学的学号（在 1 到 10^9 之间），按进教室的顺序给出。
+//上课了，老师想知道第 i 个进入教室的同学的学号是什么（最先进入教室的同学 i=1），询问次数不超过 10^5 次。
+
+//https://www.luogu.com.cn/record/51603358 输出格式错误
+//https://www.luogu.com.cn/record/51603385 输出格式错误
+//https://www.luogu.com.cn/record/51603398
+
+#include&lt;iostream&gt;
+using namespace std;
+long long a[2000001]; //谨防mian(划掉)main参数爆变量
+int main(){
+    int n,m,i;
+    cin&gt;&gt;n&gt;&gt;m;
+    for(int o=1;o&lt;=n;o++){
+        cin&gt;&gt;a[o];
+    }
+    for(int o=1;o&lt;=m;o++){
+        int s;
+        cin&gt;&gt;s;
+        if(o==m){
+            cout&lt;&lt;a[s];
+        }else cout&lt;&lt;a[s]&lt;&lt;endl;
+    }
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1067-Polynomial-Output-NOIP2009/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1067 [NOIP2009 普及组] 多项式输出
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

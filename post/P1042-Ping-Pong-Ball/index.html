@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1042 乒乓球 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="AC题目，思路为先
+思路不行，一切白搭
+//P1042 乒乓球
+//华华通过以下方式进行分析，首先将比赛每个球的胜负列成一张表，然后分别计算在1111分制和2121分制下，双方的比赛结果（截至记录末尾）。
+//比如现在有这么一份记录，（其中..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1042 乒乓球</h2>
+            <div class="post-date">2020-08-06</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1042-Ping-Pong-Ball.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>AC题目，思路为先<br>
+思路不行，一切白搭</p>
+<pre><code class="language-cpp">//P1042 乒乓球
+//华华通过以下方式进行分析，首先将比赛每个球的胜负列成一张表，然后分别计算在1111分制和2121分制下，双方的比赛结果（截至记录末尾）。
+//比如现在有这么一份记录，（其中W表示华华获得一分，L表示华华对手获得一分）：
+//WWWWWWWWWWWWWWWWWWWWWWLW
+//在1111分制下，此时比赛的结果是华华第一局1111比00获胜，第二局1111比00获胜，正在进行第三局，当前比分11比11。而在2121分制下，此时比赛结果是华华第一局2121比00获胜，正在进行第二局，比分22比11。
+//如果一局比赛刚开始，则此时比分为00比00。直到分差大于或者等于22，才一局结束。
+//你的程序就是要对于一系列比赛信息的输入（WLWL形式），输出正确的结果。
+//https://www.luogu.com.cn/record/36502585
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    char word[62500];     //开个够大的数组(25*2500=62500)
+    int awin=0,bwin=0,i;
+    for(i=1;;i++){
+        cin&gt;&gt;word[i];
+        if(word[i]=='W'){ //标记
+            word[i]=1;
+        }else if(word[i]=='L'){
+            word[i]=2;
+        }else if(word[i]=='E'){
+            word[i]=0;
+            break;
+        }
+    }
+    //11分
+    for(int o=1;o&lt;=i;o++){
+        if(word[o]==1){
+            awin++;
+        }else if(word[o]==2){
+            bwin++;
+        }if(word[o]==0){
+            cout&lt;&lt;awin&lt;&lt;&quot;:&quot;&lt;&lt;bwin&lt;&lt;endl&lt;&lt;endl; //EOF
+        }
+        if(awin-bwin&gt;=2||bwin-awin&gt;=2){
+            if(awin&gt;=11||bwin&gt;=11){           //到达11分和分差为2时自动输出+清除
+                cout&lt;&lt;awin&lt;&lt;&quot;:&quot;&lt;&lt;bwin&lt;&lt;endl;
+                awin=0;
+                bwin=0;
+            }
+        }
+    }
+    awin=0;                                   //为下文归零
+    bwin=0;
+    //21分
+    for(int o=1;o&lt;=i;o++){
+        if(word[o]==1){
+            awin++;
+        }else if(word[o]==2){
+            bwin++;
+        }if(word[o]==0){
+            cout&lt;&lt;awin&lt;&lt;&quot;:&quot;&lt;&lt;bwin&lt;&lt;endl&lt;&lt;endl;
+        }
+        if(awin-bwin&gt;=2||bwin-awin&gt;=2){
+            if(awin&gt;=21||bwin&gt;=21){
+                cout&lt;&lt;awin&lt;&lt;&quot;:&quot;&lt;&lt;bwin&lt;&lt;endl;
+                awin=0;
+                bwin=0;
+            }
+        }
+    }
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P5725-Calculating-Triangle/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P5725 【深基4.习8】求三角形
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

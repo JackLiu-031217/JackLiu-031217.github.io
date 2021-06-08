@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1085 不高兴的津津 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="赞美数组、逆推
+//洛谷 P1085 不高兴的津津(NOIP2004)
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+	int day,night,zong[7..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1085 不高兴的津津</h2>
+            <div class="post-date">2020-01-10</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1085-Jinjin-is-unhappy-ME-TOO.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>赞美数组、逆推</p>
+<pre><code class="language-cpp">//洛谷 P1085 不高兴的津津(NOIP2004)
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int main(){
+	int day,night,zong[7],max,ans,d; //白天时长 晚间时长 一周7天时长的存储数组 最大时长 时间最久的那一天 
+	max=0; //归零
+	ans=0; //便于在没有该日期时输出0
+	for(d=1;d&lt;=7;d++) //正向数据录入
+	{
+		cin&gt;&gt;day&gt;&gt;night;
+		zong[d]=day+night;
+	}
+	for(d=7;d&gt;=1;d--)//逆向推算（偷懒妙招）
+	{
+		if(zong[d]&gt;max&amp;&amp;zong[d]&gt;8) //判断值是否最大/是否等于8
+		{
+			zong[d]=max; //总数最大者为max
+			ans=d; //同时max对应的天数为最大日
+		}
+	}
+	cout&lt;&lt;ans&lt;&lt;endl; //结果输出
+	return 0;
+}
+</code></pre>
+<p>本文首发洛谷博客 <a href="https://www.luogu.com.cn/blog/301765/P1085-Jingjing-is-unhappy-ME-TOO">不高兴的津津</a></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/hello-gridea/">
+                  <h3 class="post-title">
+                    Hello Gridea
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

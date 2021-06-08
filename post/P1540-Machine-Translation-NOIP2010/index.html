@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1540 [NOIP2010 提高组] 机器翻译 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="四个月过去了
+终于咕出来一截（
+//P1540 [NOIP2010 提高组] 机器翻译
+//https://www.luogu.com.cn/problem/P1540
+
+//小晨的电脑上安装了一个机器翻译软件，他经常用这个软件来翻译英语文..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1540 [NOIP2010 提高组] 机器翻译</h2>
+            <div class="post-date">2021-06-06</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1540-Machine-Translation-NOIP2010.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>四个月过去了</p>
+<p>终于咕出来一截（</p>
+<pre><code class="language-cpp">//P1540 [NOIP2010 提高组] 机器翻译
+//https://www.luogu.com.cn/problem/P1540
+
+//小晨的电脑上安装了一个机器翻译软件，他经常用这个软件来翻译英语文章。
+//这个翻译软件的原理很简单，它只是从头到尾，依次将每个英文单词用对应的中文含义来替换。
+//对于每个英文单词，软件会先在内存中查找这个单词的中文含义，如果内存中有，软件就会用它进行翻译；
+//如果内存中没有，软件就会在外存中的词典内查找，查出单词的中文含义然后翻译，并将这个单词和译义放入内存，以备后续的查找和翻译。
+//假设内存中有 M 个单元，每单元能存放一个单词和译义。每当软件将一个新单词存入内存前，如果当前内存中已存入的单词数不超过 M-1，软件会将新单词存入一个未使用的内存单元；
+//若内存中已存入 M 个单词，软件会清空最早进入内存的那个单词，腾出单元来，存放新单词。
+//假设一篇英语文章的长度为 N 个单词。给定这篇待译文章，翻译软件需要去外存查找多少次词典？假设在翻译开始前，内存中没有任何单词。
+
+//https://www.luogu.com.cn/record/50892096
+//https://www.luogu.com.cn/record/51423798
+//https://www.luogu.com.cn/record/51531867
+//https://www.luogu.com.cn/record/51531868
+//https://www.luogu.com.cn/record/51531869
+
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+	int m,n,ans=0;
+	int l=0;
+	int w[1001];
+    for(int i=0;i&lt;=1001;i++){
+        w[i]=-1;
+    }
+	cin&gt;&gt;m&gt;&gt;n;
+	for(int i=1;i&lt;=n;i++){
+		int in;
+		cin&gt;&gt;in;
+		bool h=0;
+		for(int o=0;o&lt;=m;o++){
+			if(in==w[o]){
+				h=1;
+			}	
+		}
+		if(h==0){
+			if(l==m-1){ //内存范围：0-“m-1”
+				for(int o=0;o&lt;m;o++){
+					w[o]=w[o+1];
+				}
+				w[m-1]=in;
+			}else{
+				w[l]=in;
+				l++;
+			}
+			ans++;
+		}	
+	}
+	cout&lt;&lt;ans&lt;&lt;endl;
+	return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1031-Evenly-Distribute-Cards-NOIP2002/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1031 [NOIP2002 提高组] 均分纸牌
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

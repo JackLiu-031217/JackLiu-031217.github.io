@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1601 A+B Problem（高精） | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="妈妈我会写高精计算了
+//洛谷OJ P1601 A+B Problem（高精）
+//高精度加法，相当于a+b problem，不用考虑负数.
+//我的第一道高精题。
+//https://www.luogu.com.cn/record/391..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1601 A+B Problem（高精）</h2>
+            <div class="post-date">2020-10-03</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1601-A-Plus-B-Problem-High-Precision-Ver.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p><s>妈妈我会写高精计算了</s></p>
+<pre><code class="language-cpp">//洛谷OJ P1601 A+B Problem（高精）
+//高精度加法，相当于a+b problem，不用考虑负数.
+//我的第一道高精题。
+//https://www.luogu.com.cn/record/39152546
+#include&lt;iostream&gt;
+using namespace std;
+int tmp;
+int highplus(char n1,char n2){ //高精度计算函数
+    int n=(n1-'0')+(n2-'0')+tmp;
+    tmp=n/10;
+    if(n+'0'&lt;='9'){
+        return n+'0';
+    }else return n-10+'0'; //回传时以对应的ASCII码形式回传
+}
+string expand(string num1,string num2){ //string扩充函数
+    string num=&quot;&quot;;
+    for(int i=1;i&lt;=num1.length()-num2.length();i++){
+        num+='0'; //前面塞0（塞爆！塞爆！（划掉
+    }
+    num+=num2;
+    return num;
+}
+int main(){
+    string num1,num2;
+    cin&gt;&gt;num1&gt;&gt;num2;
+    if(num1.length()&gt;num2.length()){ //先把两个字符串的length扩充到相等
+        num2=expand(num1,num2);
+    }else num1=expand(num2,num1);
+    string result=&quot;&quot;; //结果归零
+    for(int i=num1.length()-1;i&gt;=0;i--){
+        result+=highplus(num1[i],num2[i]);
+    }
+    if(tmp+'0'!='0'){ //如果tmp是0就不要加一位了
+    //tmp设成全局函数还是有用的
+        result+=tmp+'0';
+    }
+    for(int i=result.length()-1;i&gt;=0;i--){
+        cout&lt;&lt;result[i];
+    }
+    cout&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P5736-Prime-Number-Filter/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P5736 【深基7.例2】质数筛
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

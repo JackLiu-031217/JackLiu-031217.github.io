@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P2141 珠心算测验 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="这道题花了我半个上午……
+重点在查重的方案上
+/*P2141 珠心算测验
+  珠心算是一种通过在脑中模拟算盘变化来完成快速运算的一种计算技术。珠心算训练，既能够开发智力，又能够为日常生活带来很多便利，因而在很多学校得到普及。
+  某学校的珠..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P2141 珠心算测验</h2>
+            <div class="post-date">2020-08-15</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P2141-Zhu-Xin-Suan-Test.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>这道题花了我半个上午……<br>
+重点在查重的方案上</p>
+<pre><code class="language-cpp">/*P2141 珠心算测验
+  珠心算是一种通过在脑中模拟算盘变化来完成快速运算的一种计算技术。珠心算训练，既能够开发智力，又能够为日常生活带来很多便利，因而在很多学校得到普及。
+  某学校的珠心算老师采用一种快速考察珠心算加法能力的测验方法。他随机生成一个正整数集合，集合中的数各不相同，然后要求学生回答：
+  其中有多少个数，恰好等于集合中另外两个（不同的）数之和？
+  最近老师出了一些测验题，请你帮忙求出答案。
+  (本题目为2014NOIP普及T1)
+  INPUT
+  共两行，第一行包含一个整数n，表示测试题中给出的正整数个数。
+  第二行有nn个正整数，每两个正整数之间用一个空格隔开，表示测试题中给出的正整数。*/
+//https://www.luogu.com.cn/record/34971754
+//https://www.luogu.com.cn/record/36978467
+#include&lt;iostream&gt;
+using namespace std;
+int main(){
+    int i,n[101],ans=0,check;//i:心算的数字的数目,3&lt;i&lt;100.n[100]:测试题中的正整数.ans:答案
+    cin&gt;&gt;i;
+    for(int a=1;a&lt;=i;a++){
+        cin&gt;&gt;n[a];
+    }
+    for(int locate=1;locate&lt;=i-1;locate++){//locate:当前心算数的位置
+        for(int locateplus=locate+1;locateplus&lt;=i;locateplus++){//locateplus:与当前心算数相加的数的位置
+            int result=n[locate]+n[locateplus];
+            int chongfu=1,num[1000000];
+            for(check=1;check&lt;=i;check++){
+                if(result==n[check]){//当遇到相等数时
+                    if(num[result]==1){//验证该数是否出现过
+                        //cout&lt;&lt;&quot;Number &quot;&lt;&lt;result&lt;&lt;&quot; has been flaged,skipping.&quot;&lt;&lt;endl;//debug
+                        continue;
+                    }else num[result]=1;/*cout&lt;&lt;&quot;Number &quot;&lt;&lt;result&lt;&lt;&quot; has bot been signed, signing&quot;&lt;&lt;endl;*/ans++;
+                }
+            }
+        }
+    }
+    cout&lt;&lt;ans&lt;&lt;endl;
+    return 0;
+}
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1567-Get-The-High-Temperature-Days/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1567 统计天数
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>洛谷笔记 - P1909 买铅笔 | Just Prog</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://just-prog.github.io/favicon.ico?v=1623131968596">
+<link rel="stylesheet" href="https://just-prog.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="首先先谢谢各位大佬的指点（滑稽）
+指路求助贴
+//洛谷网校练习 P1909买铅笔 NOIP2016普及组
+#include&lt;bits/stdc++.h&gt; //通用头文件，明者自明（
+using namespace std;
+in..." />
+    <meta name="keywords" content="Luogu" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://just-prog.github.io">
+        <img src="https://just-prog.github.io/images/avatar.png?v=1623131968596" class="site-logo">
+        <h1 class="site-title">Just Prog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav" target="_blank">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav" target="_blank">
+            归档
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav" target="_blank">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/just-prog2" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Coding with Love and Peace
+    </div>
+    <div class="site-footer">
+      Generated with <a href="https://github.com/getgridea/gridea" target="_blank"> Gridea</a> | <a class="rss" href="https://just-prog.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">洛谷笔记 - P1909 买铅笔</h2>
+            <div class="post-date">2020-01-26</div>
+            
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/p1909-pencil.png')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>首先先谢谢各位大佬的指点（滑稽）<br>
+<a href="https://www.luogu.com.cn/discuss/show/185108">指路求助贴</a></p>
+<pre><code class="language-cpp">//洛谷网校练习 P1909买铅笔 NOIP2016普及组
+#include&lt;bits/stdc++.h&gt; //通用头文件，明者自明（
+using namespace std;
+int main(){
+	int need,number[3],price[3],zong[3],boxnum[3],ans,i,yushu[3];
+	//need需求数量，numberX包装中的支数，priceX每盒价钱，boxnum盒数，zong总价钱，ans最终最小值答案，i下面for循环用
+	//yushu用于检查是否应该多弄一盒
+	cin&gt;&gt;need; //输入需求
+	ans=2147483647; //拿int函数限定值堵住BUG的嘴（
+	
+	for (i=0;i&lt;3;++i) //限定三组
+	{
+		cin&gt;&gt;number[i]&gt;&gt;price[i]; //输入支数和价格
+		boxnum[i]=need/number[i]; //统计盒数
+		yushu[i]=need%number[i]; //求需要的数量与购买数量的余数
+		if(yushu[i]!=0) //有余数则盒数+1
+			boxnum[i]=boxnum[i]+1; //朴实的+1方法（其实是忘了是boxnum++还是++boxnum了）
+		zong[i]=boxnum[i]*price[i]; //统计总价格
+		if(zong[i]&lt;ans) //取最小值
+			ans=zong[i];
+	}
+	cout&lt;&lt;ans; //输出
+	return 0; //GAME OVER!
+}
+//肯定没有其他人写得好啦（
+</code></pre>
+<p>本文首发于洛谷博客 <a href="https://www.luogu.com.cn/blog/301765/p1909-pencil">仙 人 指 路</a></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://just-prog.github.io/tag/nImvWLetJ/" class="tag">
+                    Luogu
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://just-prog.github.io/post/P1085-Jinjin-is-unhappy-ME-TOO/">
+                  <h3 class="post-title">
+                    洛谷笔记 - P1085 不高兴的津津
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
