@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>洛谷笔记 - P5015 标题统计 | Just Prog</title>
+<title>洛谷笔记 - P5727 【深基5.例3】冰雹猜想 | Just Prog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,11 +18,11 @@
 
 
 
-    <meta name="description" content="在学校机房做的。
-//凯凯刚写了一篇美妙的作文，请问这篇作文的标题中有多少个字符？ 
-//注意：标题中可能包含大、小写英文字母、数字字符、空格和换行符。统计标题字 符数时，空格和换行符不计算在内。
-//输入文件只有一行，一个字符串 ss。
-..." />
+    <meta name="description" content="卧槽！下雹子了！牛逼啊！
+/*------------------------------------/
+    P5727 【深基5.例3】冰雹猜想
+/------------------------------------*/
+//ht..." />
     <meta name="keywords" content="Luogu" />
   </head>
   <body>
@@ -92,48 +92,50 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">洛谷笔记 - P5015 标题统计</h2>
-            <div class="post-date">2020-08-03</div>
+            <h2 class="post-title">洛谷笔记 - P5727 【深基5.例3】冰雹猜想</h2>
+            <div class="post-date">2021-07-11</div>
             
-              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P5015-Title-Statistics.png')">
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P5727-Hail-Guess.png')">
               </div>
             
             <div class="post-content" v-pre>
-              <p>在学校机房做的。</p>
-<pre><code class="language-cpp">//凯凯刚写了一篇美妙的作文，请问这篇作文的标题中有多少个字符？ 
-//注意：标题中可能包含大、小写英文字母、数字字符、空格和换行符。统计标题字 符数时，空格和换行符不计算在内。
-//输入文件只有一行，一个字符串 ss。
-//输出文件只有一行，包含一个整数，即作文标题的字符数（不含空格和换行符）。
-//https://www.luogu.com.cn/record/34976915
-//https://www.luogu.com.cn/record/34976929
-//https://www.luogu.com.cn/record/34976938
-//https://www.luogu.com.cn/record/34976962
-//https://www.luogu.com.cn/record/34977007
+              <p><s><a href="https://zh.moegirl.org.cn/%E5%96%9C%E6%AC%A2!%E9%9B%AA!%E7%9C%9F%E5%AE%9E%E7%9A%84%E9%AD%94%E6%B3%95">卧槽！下雹子了！牛逼啊！</a></s></p>
+<pre><code class="language-cpp">/*------------------------------------/
+    P5727 【深基5.例3】冰雹猜想
+/------------------------------------*/
+//https://www.luogu.com.cn/problem/P5727
+
+//给出一个正整数 n (n &lt;= 100)，然后对这个数字一直进行下面的操作：
+//如果这个数字是奇数，那么将其乘 3 再加 1，否则除以 2。经过若干次循环后，最终都会回到 1。
+//经过验证很大的数字（7×10^11）都可以按照这样的方式比变成 1，所以被称为“冰雹猜想”。
+//例如当 n 是 20，变化的过程是 [20, 10, 5, 16, 8, 4, 2, 1]。
+//根据给定的数字，验证这个猜想，并从最后的 1 开始，倒序输出整个变化序列。
+
+//https://www.luogu.com.cn/record/34483044
+//https://www.luogu.com.cn/record/52425424
+
 #include&lt;iostream&gt;
-#include&lt;cstdio&gt;
-#include&lt;cstring&gt;
 using namespace std;
 int main(){
-	int ans=0;
-	char s[5];
-	gets(s); //stdio.h或cstdio,适用于char变量,切忌string
-	int lengths=strlen(s);//cstring
-	for(int i=0;i&lt;lengths;i++){
-		if(s[i]&gt;='a' &amp;&amp; s[i]&lt;='z'){
-			ans++;
-		}
-		if(s[i]&gt;='A' &amp;&amp; s[i]&lt;='Z'){
-			ans++;
-		}
-		if(s[i]&gt;='0' &amp;&amp; s[i]&lt;='9'){
-			ans++;
-		}
-	}
-	cout&lt;&lt;ans&lt;&lt;endl;
-	return 0;
+    int n,h=0;
+    cin&gt;&gt;n;
+    int a[10000];
+    a[0]=n;
+    for(h=1;n!=1;h++){
+        if(n%2==0){
+            n/=2;
+        }else if(n%2==1){
+            n*=3;
+            n++;
+        }
+        a[h]=n;
+    }
+    for(int l=h-1;l&gt;=0;l--){
+        cout&lt;&lt;a[l]&lt;&lt;&quot; &quot;;
+    }
+    return 0;
 }
 </code></pre>
-<pre><code></code></pre>
 
             </div>
             
@@ -148,9 +150,9 @@ int main(){
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://just-prog.github.io/post/P5738-Singing-Match/">
+                <a href="https://just-prog.github.io/post/P3156-Asking-For-Student-ID-Number/">
                   <h3 class="post-title">
-                    洛谷笔记 - P5738 【深基7.例4】歌唱比赛
+                    洛谷笔记 - P3156 【深基15.例1】询问学号
                   </h3>
                 </a>
               </div>
