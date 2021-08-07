@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://just-prog.github.io</id>
     <title>Just Prog</title>
-    <updated>2021-07-10T22:55:05.321Z</updated>
+    <updated>2021-08-07T23:49:51.443Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://just-prog.github.io"/>
     <link rel="self" href="https://just-prog.github.io/atom.xml"/>
@@ -10,6 +10,20 @@
     <logo>https://just-prog.github.io/images/avatar.png</logo>
     <icon>https://just-prog.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Just Prog</rights>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P1151 子数整数]]></title>
+        <id>https://just-prog.github.io/post/P1151-Numerator-Integer/</id>
+        <link href="https://just-prog.github.io/post/P1151-Numerator-Integer/">
+        </link>
+        <updated>2021-08-07T23:42:19.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[洛谷笔记 - P5728 【深基5.例5】旗鼓相当的对手]]></title>
+        <id>https://just-prog.github.io/post/P5728-A-Rivalry-Of-Equals/</id>
+        <link href="https://just-prog.github.io/post/P5728-A-Rivalry-Of-Equals/">
+        </link>
+        <updated>2021-08-07T22:56:44.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[洛谷笔记 - P1320 压缩技术（续集版）]]></title>
         <id>https://just-prog.github.io/post/P1320-Seven-Zip-Plus/</id>
@@ -65,19 +79,5 @@
         <link href="https://just-prog.github.io/post/P1031-Evenly-Distribute-Cards-NOIP2002/">
         </link>
         <updated>2021-02-24T00:22:56.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[洛谷笔记 - P1003 [NOIP2011 提高组] 铺地毯]]></title>
-        <id>https://just-prog.github.io/post/P1003-Lay-Carpets-NOIP2011-DAY1/</id>
-        <link href="https://just-prog.github.io/post/P1003-Lay-Carpets-NOIP2011-DAY1/">
-        </link>
-        <updated>2021-02-19T01:21:33.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[洛谷笔记 - P1328 生活大爆炸版石头剪刀布  [NOIP2014 提高组]]]></title>
-        <id>https://just-prog.github.io/post/P1328-Rock-Paper-Scissors-Big-Bang-ver-NOIP2014/</id>
-        <link href="https://just-prog.github.io/post/P1328-Rock-Paper-Scissors-Big-Bang-ver-NOIP2014/">
-        </link>
-        <updated>2021-02-03T01:43:50.000Z</updated>
     </entry>
 </feed>

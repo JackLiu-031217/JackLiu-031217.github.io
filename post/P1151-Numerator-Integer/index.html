@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>洛谷笔记 - P1319 压缩技术 | Just Prog</title>
+<title>洛谷笔记 - P1151 子数整数 | Just Prog</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,12 +18,9 @@
 
 
 
-    <meta name="description" content="这几天明显变懒狗了
-//洛谷OJ P1319 压缩技术
-//设某汉字由N × N的0和1的点阵图案组成。
-//我们依照以下规则生成压缩码。连续一组数值：
-//从汉字点阵图案的第一行第一个符号开始计算，按书写顺序从左到右，由上至下。
-//第一..." />
+    <meta name="description" content="/*-------------------------------------------/
+                P1151 子数整数       
+    https://www.luogu.com.cn/problem/P1..." />
     <meta name="keywords" content="Luogu" />
   </head>
   <body>
@@ -93,58 +90,64 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">洛谷笔记 - P1319 压缩技术</h2>
-            <div class="post-date">2020-10-03</div>
+            <h2 class="post-title">洛谷笔记 - P1151 子数整数</h2>
+            <div class="post-date">2021-08-08</div>
             
-              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1319-Seven-Zip.png')">
+              <div class="feature-container" style="background-image: url('https://just-prog.github.io/post-images/P1151-Numerator-Integer.png')">
               </div>
             
             <div class="post-content" v-pre>
-              <p>这几天明显变懒狗了</p>
-<pre><code class="language-cpp">//洛谷OJ P1319 压缩技术
-//设某汉字由N × N的0和1的点阵图案组成。
-//我们依照以下规则生成压缩码。连续一组数值：
-//从汉字点阵图案的第一行第一个符号开始计算，按书写顺序从左到右，由上至下。
-//第一个数表示连续有几个0，第二个数表示接下来连续有几个1，
-//第三个数再接下来连续有几个0，第四个数接着连续几个1，以此类推……
-//例如: 以下汉字点阵图案：
-//          0001000
-//          0001000
-//          0001111
-//          0001000
-//          0001000
-//          0001000
-//          1111111
-//对应的压缩码是: 7 3 1 6 1 6 4 3 1 6 1 6 1 3 7 (第一个数是N,其余各位表示交替表示0和1的个数,压缩码保证 N * N = 交替的各位数之和)
-//https://www.luogu.com.cn/record/39209164
+              <pre><code class="language-cpp">/*-------------------------------------------/
+                P1151 子数整数       
+    https://www.luogu.com.cn/problem/P1151
+/-------------------------------------------*/
+
+/*
+  对于一个五位数a1a2a3a4a5，可将其拆分为三个子数：
+  sub1=a1a2a3
+  sub2=a2a3a4
+  sub3=a3a4a5
+  例如，五位数20207可以拆分成
+  sub1=202
+  sub2=020(=20)
+  sub3=207
+  现在给定一个正整数K，要求你编程求出10000到30000之间所有满足下述条件的五位数，
+  条件是这些五位数的三个子数sub1,sub2,sub3都可被K整除。
+*/
+
+//https://www.luogu.com.cn/record/55255820 (忽略了无解时的No输出)
+//https://www.luogu.com.cn/record/55255846
+
 #include&lt;iostream&gt;
 using namespace std;
 int main(){
-    int n,x,p=0;
-    bool z=true,sq[40000]={false};
-    cin&gt;&gt;n;
-    while(p&lt;(n*n)){ //判断输入是否到头,此种判断方法貌似只能用scanf,cin貌似会无法转换
-        if(z){
-            cin&gt;&gt;x; //使用布尔变量z标记数字是0还是1
-            for(int i=1+p;i&lt;=p+x;i++){
-                sq[i]=0;
+    int in;
+    cin&gt;&gt;in;
+    char num[5]={'1','0','0','0','0'};
+    int m=0;
+    for(int i=10000;i&lt;=30000;i++){
+        for(int o=4;o&gt;=0;o--){
+            if(num[o]&gt;'9'){
+                num[o-1]++;
+                num[o]='0';
             }
-            p+=x; //使用变量记录数加到了矩阵的哪个方位
-            z=!z; //两 极 反 转
-        }else if(z!=true){
-            cin&gt;&gt;x;
-            for(int i=1+p;i&lt;=p+x;i++){
-                sq[i]=1;
-            }
-            p+=x;
-            z=!z;
         }
+        int fd=0;
+        for(int o=0;o&lt;=2;o++){
+            int n=0;
+            n+=((num[o]-'0')*100)+((num[o+1]-'0')*10)+(num[o+2]-'0');
+            if(n%in==0){
+                fd++;
+            }
+        }
+        if(fd==3){
+            cout&lt;&lt;i&lt;&lt;endl;
+            m++;
+        }
+        num[4]++;
     }
-    for(int i=1;i&lt;=p;i++){
-        cout&lt;&lt;sq[i];
-        if(i%n==0){
-            cout&lt;&lt;endl;
-        }
+    if(m==0){
+        cout&lt;&lt;&quot;No&quot;&lt;&lt;endl;
     }
     return 0;
 }
@@ -163,9 +166,9 @@ int main(){
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://just-prog.github.io/post/P1601-A-Plus-B-Problem-High-Precision-Ver/">
+                <a href="https://just-prog.github.io/post/P5728-A-Rivalry-Of-Equals/">
                   <h3 class="post-title">
-                    洛谷笔记 - P1601 A+B Problem（高精）
+                    洛谷笔记 - P5728 【深基5.例5】旗鼓相当的对手
                   </h3>
                 </a>
               </div>
