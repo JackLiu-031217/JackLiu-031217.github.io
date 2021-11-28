@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Coding with Love &amp; Peace.">
+    <meta name="author" content="Just-Prog">
+    
+    <title>
+        
+            洛谷笔记 - P1308 统计单词数 |
+        
+        Just Prog!
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"just-prog.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#E799B0","avatar":"/images/avatar.png","favicon":"/images/logo.png","article_img_align":"center","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.png","description":"Just Prog With Love & Peace."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+    
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Just Prog!
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">洛谷笔记 - P1308 统计单词数</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Just-Prog</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2020-08-19 10:46:36
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Luogu/">Luogu</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>734 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>要多想。</p>
+<span id="more"></span>
+<pre><code class="highlight cpp"><span class="comment">/*--------------------------------------------------------------------------------</span>
+<span class="comment">  P1308 统计单词数</span>
+<span class="comment">  一般的文本编辑器都有查找单词的功能，该功能可以快速定位特定单词在文章中的位置，</span>
+<span class="comment">  有的还能统计出特定单词在文章中出现的次数。</span>
+<span class="comment">  现在，请你编程实现这一功能，具体要求是：</span>
+<span class="comment">  给定一个单词，请你输出它在给定的文章中出现的次数和第一次出现的位置。</span>
+<span class="comment">  注意：匹配单词时，不区分大小写，但要求完全匹配，</span>
+<span class="comment">  即给定单词必须与文章中的某一独立单词在不区分大小写的情况下完全相同，</span>
+<span class="comment">  如果给定单词仅是文章中某一单词的一部分则不算匹配。</span>
+<span class="comment">--------------------------------------------------------------------------------*/</span>
+<span class="comment">//https://www.luogu.com.cn/record/37271277</span>
+<span class="comment">//感谢@Kio_ (ID:127925)</span>
+<span class="comment">//感谢@clock钟0622 (ID:323183)</span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> std;
+string sentence,keyword;
+string cutsentence[<span class="number">1000000</span>];
+string cutfull[<span class="number">1000000</span>];
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;
+    <span class="built_in">getline</span>(cin,keyword); <span class="comment">//读入数据</span>
+    <span class="comment">//cout&lt;&lt;&quot;Keyword=&quot;&lt;&lt;keyword&lt;&lt;endl;</span>
+    <span class="built_in">getline</span>(cin,sentence);
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;keyword.<span class="built_in">size</span>();i++)&#123; <span class="comment">//谨 防 越 界 操 作 --- @Kio_</span>
+        <span class="keyword">if</span>(keyword[i]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;keyword[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)&#123;
+            keyword[i]+=<span class="number">32</span>; <span class="comment">//小写转换</span>
+        &#125;
+    &#125;
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sentence.<span class="built_in">size</span>();i++)&#123; <span class="comment">//下同</span>
+        <span class="keyword">if</span>(sentence[i]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;sentence[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)&#123;
+            sentence[i]+=<span class="number">32</span>; <span class="comment">//小写转换</span>
+        &#125;
+    &#125;
+    <span class="keyword">int</span> blkflag=<span class="number">0</span>; <span class="comment">//blkflag:空格数量，反推单词数</span>
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sentence.<span class="built_in">size</span>();i++)&#123;
+        <span class="keyword">if</span>(sentence[i]==<span class="string">&#x27; &#x27;</span>)&#123;
+            blkflag++; <span class="comment">//标记空格数量</span>
+        &#125;
+    &#125;
+    <span class="keyword">int</span> cutnum=blkflag+<span class="number">1</span>,cutflag=<span class="number">0</span>; <span class="comment">//cutnum:单词切片数量 cutflag:切片起始点位置 </span>
+    <span class="keyword">int</span> count=<span class="number">0</span>;    <span class="comment">//count:切片序号 --- @clock钟0622</span>
+    <span class="comment">//for(int i=0;i&lt;cutnum;i++)&#123; // --- @Kio_</span>
+        <span class="keyword">for</span>(<span class="keyword">int</span> j=cutflag;j&lt;=sentence.<span class="built_in">size</span>();j++)&#123; <span class="comment">//从起始点开始对</span>
+            <span class="keyword">if</span>(sentence[j]==<span class="string">&#x27; &#x27;</span>||sentence[j]==<span class="string">&#x27;\0&#x27;</span>)&#123; <span class="comment">//划定范围</span>
+                <span class="keyword">for</span>(<span class="keyword">int</span> k=cutflag;k&lt;j;k++)&#123; <span class="comment">//确保在0&lt;k&lt;j范围内复制</span>
+                    cutsentence[count]+=sentence[k]; <span class="comment">//大数组-&gt;小数组 @clock钟0622</span>
+                &#125;
+                <span class="comment">//&lt;&lt;&quot;cutsentence[&quot;&lt;&lt;count&lt;&lt;&quot;] = &quot;&lt;&lt;cutsentence[count]&lt;&lt;endl; // Debug --- @clock钟0622</span>
+                <span class="comment">//cutflag=j; //复制完把起始点调到空格后面的字母</span>
+                count++;
+                cutflag=j+<span class="number">1</span>; <span class="comment">// 要的 --- @clock钟0622</span>
+                <span class="comment">//cout&lt;&lt;&quot;Begin with point &quot;&lt;&lt;cutflag&lt;&lt;&quot; .&quot;&lt;&lt;endl;</span>
+                <span class="comment">//break; //退出本轮循环 --- 去掉 @clock钟0622</span>
+            &#125;
+        &#125;
+    <span class="comment">//&#125; // --- @clock钟0622</span>
+    <span class="keyword">int</span> sameflag=<span class="number">0</span>,samewordflag=<span class="number">0</span>,firstflagnum=<span class="number">0</span>;
+    <span class="keyword">bool</span> firstflag=<span class="literal">false</span>;
+    <span class="comment">//int lencut; //@Kio_</span>
+    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;cutnum;i++)&#123; <span class="comment">//以切片数为界限循环</span>
+      <span class="comment">//if(cutsentence[i].size()==keyword.size())&#123;</span>
+        <span class="keyword">if</span>(cutsentence[i]==keyword)&#123; <span class="comment">// 若完全相同 --- 更改 @clock钟0622</span>
+            samewordflag++;
+            <span class="keyword">if</span>(firstflag==<span class="literal">false</span>)&#123;
+                <span class="keyword">if</span>(i&gt;=<span class="number">1</span>)&#123;
+                    <span class="keyword">for</span>(<span class="keyword">int</span> o=<span class="number">0</span>;o&lt;i;o++)&#123;
+                        firstflagnum+=cutsentence[o].<span class="built_in">size</span>();
+                    &#125;
+                    firstflagnum+=i;
+                &#125;<span class="keyword">else</span> <span class="keyword">if</span>(i=<span class="number">0</span>)&#123;
+                    firstflagnum+=<span class="number">1</span>;
+                &#125;
+                firstflag=<span class="literal">true</span>;
+            &#125;
+        &#125;
+    &#125;
+    <span class="keyword">if</span>(samewordflag!=<span class="number">0</span>)&#123; <span class="comment">//如果有相同的单词出现</span>
+        cout&lt;&lt;samewordflag&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;firstflagnum&lt;&lt;endl; <span class="comment">//输出相同个数与初次出现的标识点</span>
+    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(samewordflag==<span class="number">0</span>)&#123; <span class="comment">//如果一个相同的也没有</span>
+        cout&lt;&lt;<span class="string">&quot;-1&quot;</span>&lt;&lt;endl; <span class="comment">//输出&quot;-1&quot;</span>
+    &#125;
+    <span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//结束</span>
+&#125;</code></pre>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：洛谷笔记 - P1308 统计单词数</li>
+        <li>本文作者：Just-Prog</li>
+        <li>创建时间：2020-08-19 10:46:36</li>
+        <li>
+            本文链接：https://just-prog.github.io/2020/08/19/P1308-Counting-The-Word/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/09/20/P1125-Silly-Monkey/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">洛谷笔记 - P1125 笨小猴</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/08/18/P1028-Calculate-Number/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">洛谷笔记 - P1028 数的计算</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Just-Prog</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
