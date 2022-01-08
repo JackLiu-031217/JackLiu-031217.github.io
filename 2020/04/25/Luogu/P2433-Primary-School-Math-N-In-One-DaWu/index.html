@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Coding with Love &amp; Peace.">
+    <meta name="author" content="Just-Prog">
+    
+    <title>
+        
+            洛谷笔记 - P2433 【深基1-2】小学数学 N 合一 |
+        
+        Just Prog!
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"just-prog.github.io","root":"/","language":"zh-CN","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#E799B0","avatar":"/images/avatar.png","favicon":"/images/logo.png","article_img_align":"center","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"background_img":"/images/bg.png","description":"Just Prog With Love & Peace."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"mac"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                Just Prog!
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">洛谷笔记 - P2433 【深基1-2】小学数学 N 合一</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Just-Prog</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2020-04-25 08:25:42</span>
+        <span class="mobile">2020-04-25 08:25</span>
+    </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Luogu/">Luogu</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.4k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>你管这叫小学题？</p>
+<span id="more"></span>
+<pre><code class="highlight cpp"><span class="comment">//P2433 【深基1-2】小学数学 N 合一</span>
+<span class="comment">//作者 深入浅出</span>
+<span class="comment">//小学数学(大嘘)</span>
+<span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> std;
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;
+    <span class="keyword">int</span> num;
+    cin&gt;&gt;num;
+    <span class="comment">//请输出 I love Luogu!</span>
+    <span class="keyword">if</span>(num==<span class="number">1</span>)&#123;
+        cout&lt;&lt;<span class="string">&quot;I love Luogu!&quot;</span>;
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//这里有 10 个苹果，小A 拿走了 2 个，Uim 拿走了 4 个，八尾勇拿走剩下的所有的苹果。我们想知道：</span>
+    <span class="comment">//小A 和 Uim 两个人一共拿走多少苹果?八尾勇能拿走多少苹果？</span>
+    <span class="comment">//现在需要编写一个程序，输出两个数字作为答案，中间使用空格分开。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">2</span>)&#123;
+        cout&lt;&lt;<span class="number">2</span>+<span class="number">4</span>&lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt;<span class="number">10</span><span class="number">-2</span><span class="number">-4</span>;
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//现在有 14 个苹果。要均分给 4 名同学，分不掉的苹果放回冰箱。请问：</span>
+    <span class="comment">//每位同学能分得几个苹果？</span>
+    <span class="comment">//一共分出去多少苹果？</span>
+    <span class="comment">//把几个苹果放回冰箱？</span>
+    <span class="comment">//现在需要编写一个程序，输出三个数字作为答案，每个数字一行。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">3</span>)&#123;
+        cout&lt;&lt;<span class="number">14</span>/<span class="number">4</span>&lt;&lt;endl&lt;&lt;<span class="number">14</span>/<span class="number">4</span>*<span class="number">4</span>&lt;&lt;endl&lt;&lt;<span class="number">14</span>%<span class="number">4</span>;
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//现在有 500 毫升的肥宅快乐水，要均分给 3 名同学，每位同学可以分到多少毫升？请输出一个数字作为输出。保留 6 位有效数字，且不使用科学计数法。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">4</span>)&#123;
+        cout&lt;&lt;fixed&lt;&lt;<span class="built_in">setprecision</span>(<span class="number">3</span>)&lt;&lt;<span class="number">1.0</span>*<span class="number">500</span>/<span class="number">3</span>;
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//甲列火车长 260 米，每秒行 12 米；乙列火车长 220 米，每秒行 20 米，两车相向而行，从两车车头相遇时开始计时，多长时间后两车车尾相离？已知答案是整数。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">5</span>)&#123;
+        cout&lt;&lt;(<span class="number">220</span>+<span class="number">260</span>)/(<span class="number">20</span>+<span class="number">12</span>);
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//一个长方形长宽分别是 6cm、9cm，求它的对角线长度（cm）。直接使用 cout 输出。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">6</span>)&#123;
+        cout&lt;&lt;<span class="built_in">sqrt</span>(<span class="number">6</span>*<span class="number">6</span>+<span class="number">9</span>*<span class="number">9</span>);
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//Uim 银行账户里面有100元。经过了下面的操作：</span>
+    <span class="comment">//往里面存了 10 元；</span>
+    <span class="comment">//购物花掉了 20 元；</span>
+    <span class="comment">//把里面的钱全部取出。</span>
+    <span class="comment">//请在每次操作后输出账户余额，并使用换行符隔开。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">7</span>)&#123;
+        cout&lt;&lt;<span class="number">100</span>+<span class="number">10</span>&lt;&lt;endl&lt;&lt;<span class="number">100</span>+<span class="number">10</span><span class="number">-20</span>&lt;&lt;endl&lt;&lt;<span class="number">0</span>;
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//当半径为 r=5，请输出圆的周长、面积和球体积。取 π=3.141593。请直接使用 cout 输出答案，每行一个数字。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">8</span>)&#123;
+        <span class="keyword">double</span> <span class="keyword">const</span> pi=<span class="number">3.141593</span>;
+        <span class="keyword">double</span> <span class="keyword">const</span> r=<span class="number">5</span>;
+        cout&lt;&lt;pi*r*<span class="number">2</span>&lt;&lt;endl&lt;&lt;pi*r*r&lt;&lt;endl&lt;&lt;<span class="number">4.0</span>/<span class="number">3</span>*pi*r*r*r&lt;&lt;endl; <span class="comment">//我小学白上了</span>
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//一只小猴买了若干个桃子。第一天他刚好吃了这些桃子的一半，又贪嘴多吃了一个；</span>
+    <span class="comment">//第二天他也刚好吃了剩余桃子的一半，贪嘴多吃了一个；第三天他又刚好吃了剩下的桃子的一半，并贪嘴多吃了一个。</span>
+    <span class="comment">//第四天起来一看，发现桃子只剩下一个了。请问小猴买了几个桃子？</span>
+    <span class="comment">//此题与bilibili虚拟up主黑桃影无关（</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">9</span>)&#123;
+        <span class="keyword">int</span> peach;
+        peach=(((((<span class="number">1</span>+<span class="number">1</span>)*<span class="number">2</span>)+<span class="number">1</span>)*<span class="number">2</span>)+<span class="number">1</span>)*<span class="number">2</span>;
+        cout&lt;&lt;peach;
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//洛谷的评测任务是单位时间内均匀增加的。</span>
+    <span class="comment">//8 台评测机 30 分钟可以刚好把评测队列中的程序评测完毕，10 台评测机 6 分钟可以刚好把评测队列中的程序评测完毕，</span>
+    <span class="comment">//请问几台评测机可以在 10 分钟时刚好把评测队列中的程序评测完毕？</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">10</span>)&#123;
+        cout&lt;&lt;(<span class="number">15</span>+<span class="number">7.5</span>*<span class="number">10</span>)/<span class="number">10</span>; <span class="comment">//抄的(</span>
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//小A跑步速度 5m/s，八尾勇跑步速度 8m/s，八尾勇在小A后面 100m，</span>
+    <span class="comment">//他们同时起跑，请问需要多长时间八尾勇可以追上小A？</span>
+    <span class="comment">//输出一个数字表示答案，使用 cout 直接输出。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">11</span>)&#123;
+        cout&lt;&lt;<span class="number">1.0</span>*<span class="number">100</span>/<span class="number">3</span>;
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//大家都知道有 26 个英文字母，其中A是第一个字母。现在请编程求出：</span>
+    <span class="comment">//M 是字母表中的第几个字母？</span>
+    <span class="comment">//第 18 个字母是什么？</span>
+    <span class="comment">//输出一个数字和一个字母，使用换行隔开。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">12</span>)&#123;
+        cout&lt;&lt;(<span class="keyword">int</span>)(<span class="string">&#x27;M&#x27;</span>-<span class="string">&#x27;A&#x27;</span>)+<span class="number">1</span>&lt;&lt;endl&lt;&lt;(<span class="keyword">char</span>)(<span class="number">18</span>+<span class="string">&#x27;A&#x27;</span><span class="number">-1</span>);
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//小A有两块球形橡皮泥，一个半径是 4，一个半径是 10。</span>
+    <span class="comment">//他想把这两块橡皮泥揉在一起，然后塑造成一个正方体，请问这个正方体的棱长是多少？如果结果不是整数，则舍去小数点之后的数字。</span>
+    <span class="comment">//取π=3.141593。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">13</span>)&#123;
+        <span class="keyword">double</span> <span class="keyword">const</span> pi=<span class="number">3.141593</span>;
+        <span class="keyword">double</span> V=pi*<span class="number">4</span>*<span class="number">4</span>*<span class="number">4</span>*<span class="number">4</span>/<span class="number">3</span>+pi*<span class="number">10</span>*<span class="number">10</span>*<span class="number">10</span>*<span class="number">4</span>/<span class="number">3</span>;
+        cout&lt;&lt;<span class="built_in">floor</span>(<span class="built_in">pow</span>(V,<span class="number">1.0</span>/<span class="number">3</span>))&lt;&lt;endl; <span class="comment">//你管这玩意，叫小学数学？？？</span>
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="comment">//根据咕咕网校的预测，当课程定价为 110 元时，会有 10 人报名。如果课程价格每降低 1 元，就会多 1 名报名者（反之亦然）。</span>
+    <span class="comment">//如果希望总共能收到 3500 元学费的话，那么应该定价多少呢？</span>
+    <span class="comment">//已知本题有两个答案符合要求，则取较小的那一个。如果这个答案不是整数，则需四舍五入精确到整数。</span>
+    <span class="keyword">else</span> <span class="keyword">if</span>(num==<span class="number">14</span>)&#123;
+        cout&lt;&lt;<span class="number">50</span>&lt;&lt;endl; <span class="comment">//鲨了我，就现在(</span>
+        <span class="keyword">return</span> <span class="number">0</span>;
+    &#125;
+    <span class="keyword">return</span> <span class="number">0</span>;
+&#125;</code></pre>
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：洛谷笔记 - P2433 【深基1-2】小学数学 N 合一</li>
+        <li>本文作者：Just-Prog</li>
+        <li>创建时间：2020-04-25 08:25:42</li>
+        <li>
+            本文链接：https://justprog.tk/2020/04/25/Luogu/P2433-Primary-School-Math-N-In-One-DaWu/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Luogu/">#Luogu</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2020/04/25/Luogu/P5708-Triangle/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">洛谷笔记 - P5708 【深基2.习2】三角形面积</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2020/04/25/Luogu/P5706-Coke/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">洛谷笔记 - P5706 【深基2.例8】再分肥宅水</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Just-Prog</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
