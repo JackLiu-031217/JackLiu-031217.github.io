@@ -3052,3 +3052,9 @@ body {
   background-attachment: fixed;
   background-position: 50% 50%;
 }
+@media (max-width: 991px) {
+  .sidebar-toggle,
+  .sidebar {
+    display: none;
+  }
+}
