@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,7 +366,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>493</span>
+      <span>536</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -386,26 +386,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
         <p>int,double,float 傻傻分不清（</p>
 <span id="more"></span>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//洛谷网校 P1035 级数求和 NOIP2002普及组</span>
-<span class="token comment">//题目链接https://www.luogu.com.cn/problem/P1035</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">double</span> n<span class="token punctuation">,</span>k<span class="token punctuation">,</span>num<span class="token punctuation">;</span> 
-	<span class="token comment">//n,k均是题目中提及变量，num说白了就是每一步中的Sn（不知道Markdown的代码块里能不能打LaTeX）(很显然不行</span>
-	<span class="token comment">//这道题需要保证精度足够，double型变量比float精度高点，但是float我没试过</span>
-	num<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//先要给num变量归零</span>
-	cin<span class="token operator">&gt;&gt;</span>k<span class="token punctuation">;</span> <span class="token comment">//输入整数k</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span>n<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>n<span class="token operator">&lt;=</span><span class="token number">2147483647</span><span class="token punctuation">;</span><span class="token operator">++</span>n<span class="token punctuation">)</span> <span class="token comment">//循环计算Sn</span>
-	<span class="token punctuation">{</span>
-		num<span class="token operator">=</span>num<span class="token operator">+</span><span class="token number">1</span><span class="token operator">/</span>n<span class="token punctuation">;</span> <span class="token comment">//重复复现1+1/2+1/3+..+1/n的操作，要保证n的最大值足够大</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>num<span class="token operator">&gt;=</span>k<span class="token punctuation">)</span> <span class="token comment">//判断Sn是否大于输入的整数k</span>
-		<span class="token punctuation">{</span>
-			cout<span class="token operator">&lt;&lt;</span>n<span class="token punctuation">;</span> <span class="token comment">//如果成立，输出当前的n值</span>
-			<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//同时结束程序运行</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//洛谷网校 P1035 级数求和 NOIP2002普及组</span></span><br><span class="line"><span class="comment">//题目链接https://www.luogu.com.cn/problem/P1035</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">double</span> n,k,num; </span><br><span class="line">	<span class="comment">//n,k均是题目中提及变量，num说白了就是每一步中的Sn（不知道Markdown的代码块里能不能打LaTeX）(很显然不行</span></span><br><span class="line">	<span class="comment">//这道题需要保证精度足够，double型变量比float精度高点，但是float我没试过</span></span><br><span class="line">	num=<span class="number">0</span>; <span class="comment">//先要给num变量归零</span></span><br><span class="line">	cin&gt;&gt;k; <span class="comment">//输入整数k</span></span><br><span class="line">	<span class="keyword">for</span>(n=<span class="number">1</span>;n&lt;=<span class="number">2147483647</span>;++n) <span class="comment">//循环计算Sn</span></span><br><span class="line">	{</span><br><span class="line">		num=num+<span class="number">1</span>/n; <span class="comment">//重复复现1+1/2+1/3+..+1/n的操作，要保证n的最大值足够大</span></span><br><span class="line">		<span class="keyword">if</span>(num&gt;=k) <span class="comment">//判断Sn是否大于输入的整数k</span></span><br><span class="line">		{</span><br><span class="line">			cout&lt;&lt;n; <span class="comment">//如果成立，输出当前的n值</span></span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//同时结束程序运行</span></span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
     </div>
 
     

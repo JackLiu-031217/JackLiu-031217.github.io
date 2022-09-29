@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,7 +366,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>728</span>
+      <span>814</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -387,46 +387,7 @@ mjx-container[display="true"] + br {
         <p>很惭愧啊，只做了一点微小的工作（指后半段逻辑混乱<s>抄</s>借鉴题解）</p>
 <span id="more"></span>
 <p><strong>丢人</strong></p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/*-------------------------------------
-    P1031 [NOIP2002 提高组] 均分纸牌
-        NOIP 2002 提高组第一题
---------------------------------------*/</span>
-<span class="token comment">//https://www.luogu.com.cn/problem/P1031</span>
-<span class="token comment">//https://www.luogu.com.cn/record/47010311</span>
-<span class="token comment">//https://www.luogu.com.cn/record/47010349</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> n<span class="token punctuation">;</span> <span class="token comment">//纸牌堆数</span>
-    cin<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
-    <span class="token keyword">int</span> p<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">//每一堆纸牌包含的纸牌数目</span>
-    <span class="token keyword">int</span> z<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//纸牌总数</span>
-    <span class="token keyword">int</span> ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//移动次数</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        cin<span class="token operator">&gt;&gt;</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        z<span class="token operator">+=</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    z<span class="token operator">/=</span>n<span class="token punctuation">;</span>
-
-    <span class="token comment">//以下部分主要架构来自于 https://www.luogu.com.cn/blog/user262/solution-p1031</span>
-    <span class="token comment">//感谢前辈 谁懂谁伤心 于 2013-11-22 发布的题解</span>
-    <span class="token comment">//前辈的智慧不可小视</span>
-    <span class="token comment">//本人的程序性思维还有待提升</span>
-    
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-=</span>z<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">continue</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        p<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+=</span>p<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        ans<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    cout<span class="token operator">&lt;&lt;</span>ans<span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*-------------------------------------</span></span><br><span class="line"><span class="comment">    P1031 [NOIP2002 提高组] 均分纸牌</span></span><br><span class="line"><span class="comment">        NOIP 2002 提高组第一题</span></span><br><span class="line"><span class="comment">--------------------------------------*/</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/problem/P1031</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/47010311</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/47010349</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> n; <span class="comment">//纸牌堆数</span></span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="type">int</span> p[n]; <span class="comment">//每一堆纸牌包含的纸牌数目</span></span><br><span class="line">    <span class="type">int</span> z=<span class="number">0</span>; <span class="comment">//纸牌总数</span></span><br><span class="line">    <span class="type">int</span> ans=<span class="number">0</span>; <span class="comment">//移动次数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">        cin&gt;&gt;p[i];</span><br><span class="line">        z+=p[i];</span><br><span class="line">    }</span><br><span class="line">    z/=n;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//以下部分主要架构来自于 https://www.luogu.com.cn/blog/user262/solution-p1031</span></span><br><span class="line">    <span class="comment">//感谢前辈 谁懂谁伤心 于 2013-11-22 发布的题解</span></span><br><span class="line">    <span class="comment">//前辈的智慧不可小视</span></span><br><span class="line">    <span class="comment">//本人的程序性思维还有待提升</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">        p[i]-=z;</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">        <span class="keyword">if</span>(p[i]==<span class="number">0</span>){</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        }</span><br><span class="line">        p[i+<span class="number">1</span>]+=p[i];</span><br><span class="line">        ans++;</span><br><span class="line">    }</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
     </div>
 
     

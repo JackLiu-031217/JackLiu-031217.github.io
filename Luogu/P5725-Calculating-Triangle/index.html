@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,7 +366,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>776</span>
+      <span>937</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -386,55 +386,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
         <p>这道题磨磨蹭蹭了好几天……</p>
 <span id="more"></span>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//P5725 【深基4.习8】求三角形</span>
-<span class="token comment">//模仿例题，打印出不同方向的正方形，然后打印三角形矩阵。中间有个空行。</span>
-<span class="token comment">//https://www.luogu.com.cn/record/36420077</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> hang<span class="token punctuation">,</span>lie<span class="token punctuation">,</span>input<span class="token punctuation">,</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>input<span class="token punctuation">;</span>
-    <span class="token comment">//正方形</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span>hang<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>hang<span class="token operator">&lt;=</span>input<span class="token punctuation">;</span>hang<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span>lie<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>lie<span class="token operator">&lt;=</span>input<span class="token punctuation">;</span>lie<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                cout<span class="token operator">&lt;&lt;</span><span class="token string">"0"</span><span class="token operator">&lt;&lt;</span>i<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-                cout<span class="token operator">&lt;&lt;</span>i<span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-            i<span class="token operator">++</span><span class="token punctuation">;</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>lie<span class="token operator">==</span>input<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                cout<span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    cout<span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
-
-    <span class="token comment">//三角形</span>
-    i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token keyword">int</span> o<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>                          <span class="token comment">//记录数值个数</span>
-     <span class="token keyword">for</span><span class="token punctuation">(</span>hang<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>hang<span class="token operator">&lt;=</span>input<span class="token punctuation">;</span>hang<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">int</span> p<span class="token operator">=</span>input<span class="token operator">-</span>o<span class="token punctuation">;</span>                <span class="token comment">//记录空格数</span>
-        <span class="token keyword">for</span><span class="token punctuation">(</span>lie<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>lie<span class="token operator">&lt;=</span>input<span class="token punctuation">;</span>lie<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">if</span><span class="token punctuation">(</span>p<span class="token operator">&gt;=</span>lie<span class="token punctuation">)</span><span class="token punctuation">{</span>               <span class="token comment">//记录列数</span>
-                cout<span class="token operator">&lt;&lt;</span><span class="token string">"  "</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    cout<span class="token operator">&lt;&lt;</span><span class="token string">"0"</span><span class="token operator">&lt;&lt;</span>i<span class="token punctuation">;</span>
-                    i<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-                    cout<span class="token operator">&lt;&lt;</span>i<span class="token punctuation">;</span>
-                    i<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token keyword">if</span><span class="token punctuation">(</span>lie<span class="token operator">==</span>input<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                    cout<span class="token operator">&lt;&lt;</span><span class="token string">"\n"</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        o<span class="token operator">++</span><span class="token punctuation">;</span>                          <span class="token comment">//数值区域+1</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//P5725 【深基4.习8】求三角形</span></span><br><span class="line"><span class="comment">//模仿例题，打印出不同方向的正方形，然后打印三角形矩阵。中间有个空行。</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/36420077</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> hang,lie,input,i=<span class="number">1</span>;</span><br><span class="line">    cin&gt;&gt;input;</span><br><span class="line">    <span class="comment">//正方形</span></span><br><span class="line">    <span class="keyword">for</span>(hang=<span class="number">1</span>;hang&lt;=input;hang++){</span><br><span class="line">        <span class="keyword">for</span>(lie=<span class="number">1</span>;lie&lt;=input;lie++){</span><br><span class="line">            <span class="keyword">if</span>(i&lt;<span class="number">10</span>){</span><br><span class="line">                cout&lt;&lt;<span class="string">"0"</span>&lt;&lt;i;</span><br><span class="line">            }<span class="keyword">else</span>{</span><br><span class="line">                cout&lt;&lt;i;</span><br><span class="line">            }</span><br><span class="line">            i++;</span><br><span class="line">            <span class="keyword">if</span>(lie==input){</span><br><span class="line">                cout&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    cout&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//三角形</span></span><br><span class="line">    i=<span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> o=<span class="number">1</span>;                          <span class="comment">//记录数值个数</span></span><br><span class="line">     <span class="keyword">for</span>(hang=<span class="number">1</span>;hang&lt;=input;hang++){</span><br><span class="line">        <span class="type">int</span> p=input-o;                <span class="comment">//记录空格数</span></span><br><span class="line">        <span class="keyword">for</span>(lie=<span class="number">1</span>;lie&lt;=input;lie++){</span><br><span class="line">            <span class="keyword">if</span>(p&gt;=lie){               <span class="comment">//记录列数</span></span><br><span class="line">                cout&lt;&lt;<span class="string">"  "</span>;</span><br><span class="line">            }<span class="keyword">else</span>{</span><br><span class="line">                <span class="keyword">if</span>(i&lt;<span class="number">10</span>){</span><br><span class="line">                    cout&lt;&lt;<span class="string">"0"</span>&lt;&lt;i;</span><br><span class="line">                    i++;</span><br><span class="line">                }<span class="keyword">else</span>{</span><br><span class="line">                    cout&lt;&lt;i;</span><br><span class="line">                    i++;</span><br><span class="line">                }</span><br><span class="line">                <span class="keyword">if</span>(lie==input){</span><br><span class="line">                    cout&lt;&lt;<span class="string">"\n"</span>;</span><br><span class="line">                }</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        o++;                          <span class="comment">//数值区域+1</span></span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
     </div>
 
     

@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,7 +366,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.1k</span>
+      <span>1.2k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -387,58 +387,7 @@ mjx-container[display="true"] + br {
         <p>四个月过去了</p>
 <p>终于咕出来一截（</p>
 <span id="more"></span>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//P1540 [NOIP2010 提高组] 机器翻译</span>
-<span class="token comment">//https://www.luogu.com.cn/problem/P1540</span>
-
-<span class="token comment">//小晨的电脑上安装了一个机器翻译软件，他经常用这个软件来翻译英语文章。</span>
-<span class="token comment">//这个翻译软件的原理很简单，它只是从头到尾，依次将每个英文单词用对应的中文含义来替换。</span>
-<span class="token comment">//对于每个英文单词，软件会先在内存中查找这个单词的中文含义，如果内存中有，软件就会用它进行翻译；</span>
-<span class="token comment">//如果内存中没有，软件就会在外存中的词典内查找，查出单词的中文含义然后翻译，并将这个单词和译义放入内存，以备后续的查找和翻译。</span>
-<span class="token comment">//假设内存中有 M 个单元，每单元能存放一个单词和译义。每当软件将一个新单词存入内存前，如果当前内存中已存入的单词数不超过 M-1，软件会将新单词存入一个未使用的内存单元；</span>
-<span class="token comment">//若内存中已存入 M 个单词，软件会清空最早进入内存的那个单词，腾出单元来，存放新单词。</span>
-<span class="token comment">//假设一篇英语文章的长度为 N 个单词。给定这篇待译文章，翻译软件需要去外存查找多少次词典？假设在翻译开始前，内存中没有任何单词。</span>
-
-<span class="token comment">//https://www.luogu.com.cn/record/50892096</span>
-<span class="token comment">//https://www.luogu.com.cn/record/51423798</span>
-<span class="token comment">//https://www.luogu.com.cn/record/51531867</span>
-<span class="token comment">//https://www.luogu.com.cn/record/51531868</span>
-<span class="token comment">//https://www.luogu.com.cn/record/51531869</span>
-
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">int</span> m<span class="token punctuation">,</span>n<span class="token punctuation">,</span>ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">int</span> l<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">int</span> w<span class="token punctuation">[</span><span class="token number">1001</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span><span class="token number">1001</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        w<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">=</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-	cin<span class="token operator">&gt;&gt;</span>m<span class="token operator">&gt;&gt;</span>n<span class="token punctuation">;</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;=</span>n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token keyword">int</span> in<span class="token punctuation">;</span>
-		cin<span class="token operator">&gt;&gt;</span>in<span class="token punctuation">;</span>
-		<span class="token keyword">bool</span> h<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-		<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> o<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>o<span class="token operator">&lt;=</span>m<span class="token punctuation">;</span>o<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			<span class="token keyword">if</span><span class="token punctuation">(</span>in<span class="token operator">==</span>w<span class="token punctuation">[</span>o<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-				h<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-			<span class="token punctuation">}</span>	
-		<span class="token punctuation">}</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>h<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			<span class="token keyword">if</span><span class="token punctuation">(</span>l<span class="token operator">==</span>m<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//内存范围：0-“m-1”</span>
-				<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> o<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>o<span class="token operator">&lt;</span>m<span class="token punctuation">;</span>o<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-					w<span class="token punctuation">[</span>o<span class="token punctuation">]</span><span class="token operator">=</span>w<span class="token punctuation">[</span>o<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-				<span class="token punctuation">}</span>
-				w<span class="token punctuation">[</span>m<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>in<span class="token punctuation">;</span>
-			<span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-				w<span class="token punctuation">[</span>l<span class="token punctuation">]</span><span class="token operator">=</span>in<span class="token punctuation">;</span>
-				l<span class="token operator">++</span><span class="token punctuation">;</span>
-			<span class="token punctuation">}</span>
-			ans<span class="token operator">++</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>	
-	<span class="token punctuation">}</span>
-	cout<span class="token operator">&lt;&lt;</span>ans<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//P1540 [NOIP2010 提高组] 机器翻译</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/problem/P1540</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//小晨的电脑上安装了一个机器翻译软件，他经常用这个软件来翻译英语文章。</span></span><br><span class="line"><span class="comment">//这个翻译软件的原理很简单，它只是从头到尾，依次将每个英文单词用对应的中文含义来替换。</span></span><br><span class="line"><span class="comment">//对于每个英文单词，软件会先在内存中查找这个单词的中文含义，如果内存中有，软件就会用它进行翻译；</span></span><br><span class="line"><span class="comment">//如果内存中没有，软件就会在外存中的词典内查找，查出单词的中文含义然后翻译，并将这个单词和译义放入内存，以备后续的查找和翻译。</span></span><br><span class="line"><span class="comment">//假设内存中有 M 个单元，每单元能存放一个单词和译义。每当软件将一个新单词存入内存前，如果当前内存中已存入的单词数不超过 M-1，软件会将新单词存入一个未使用的内存单元；</span></span><br><span class="line"><span class="comment">//若内存中已存入 M 个单词，软件会清空最早进入内存的那个单词，腾出单元来，存放新单词。</span></span><br><span class="line"><span class="comment">//假设一篇英语文章的长度为 N 个单词。给定这篇待译文章，翻译软件需要去外存查找多少次词典？假设在翻译开始前，内存中没有任何单词。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/50892096</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/51423798</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/51531867</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/51531868</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/51531869</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">int</span> m,n,ans=<span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> l=<span class="number">0</span>;</span><br><span class="line">	<span class="type">int</span> w[<span class="number">1001</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">1001</span>;i++){</span><br><span class="line">        w[i]=<span class="number">-1</span>;</span><br><span class="line">    }</span><br><span class="line">	cin&gt;&gt;m&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;i++){</span><br><span class="line">		<span class="type">int</span> in;</span><br><span class="line">		cin&gt;&gt;in;</span><br><span class="line">		<span class="type">bool</span> h=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> o=<span class="number">0</span>;o&lt;=m;o++){</span><br><span class="line">			<span class="keyword">if</span>(in==w[o]){</span><br><span class="line">				h=<span class="number">1</span>;</span><br><span class="line">			}	</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(h==<span class="number">0</span>){</span><br><span class="line">			<span class="keyword">if</span>(l==m<span class="number">-1</span>){ <span class="comment">//内存范围：0-“m-1”</span></span><br><span class="line">				<span class="keyword">for</span>(<span class="type">int</span> o=<span class="number">0</span>;o&lt;m;o++){</span><br><span class="line">					w[o]=w[o+<span class="number">1</span>];</span><br><span class="line">				}</span><br><span class="line">				w[m<span class="number">-1</span>]=in;</span><br><span class="line">			}<span class="keyword">else</span>{</span><br><span class="line">				w[l]=in;</span><br><span class="line">				l++;</span><br><span class="line">			}</span><br><span class="line">			ans++;</span><br><span class="line">		}	</span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
     </div>
 
     

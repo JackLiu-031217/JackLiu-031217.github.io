@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,7 +366,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.5k</span>
+      <span>1.6k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -388,48 +388,7 @@ mjx-container[display="true"] + br {
 <p><s>星咏者 [^1] 狂喜（并不</s></p>
 <span id="more"></span>
 <p><img data-src="https://s1.ax1x.com/2020/08/15/dkA98e.png" alt="dkA98e.png"></p>
-<pangu> </pangu><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/*P1200 [USACO1.1]你的飞碟在这儿Your Ride Is Here
-  众所周知，在每一个彗星后都有一只UFO。这些UFO时常来收集地球上的忠诚支持者。不幸的是，他们的飞碟每次出行都只能带上一组支持者。因此，他们要用一种聪明的方案让这些小组提前知道谁会被彗星带走。他们为每个彗星起了一个名字，通过这些名字来决定这个小组是不是被带走的那个特定的小组（你认为是谁给这些彗星取的名字呢？）。关于如何搭配的细节会在下面告诉你；
-  你的任务是写一个程序，通过小组名和彗星名来决定这个小组是否能被那颗彗星后面的UFO带走。
-  小组名和彗星名都以下列方式转换成一个数字：最终的数字就是名字中所有字母的积，其中A是1，Z是26。
-  例如，USACO小组就是 21*19*1*3*15=17955。如果小组的数字 mod 47等于彗星的数字 mod 47,你就得告诉这个小组需要准备好被带走！
-  （记住“a mod b”是a除以b的余数；34 mod 10等于44）
-  写出一个程序，读入彗星名和小组名并算出用上面的方案能否将两个名字搭配起来
-  如果能搭配，就输出“GO”，否则输出“STAY”。
-  小组名和彗星名均是没有空格或标点的一串大写字母（不超过66个字母）。
-*/</span>
-<span class="token comment">//https://www.luogu.com.cn/problem/P1200</span>
-<span class="token comment">//https://www.luogu.com.cn/record/37054987</span>
-<span class="token comment">//https://www.luogu.com.cn/record/37056015</span>
-<span class="token comment">//https://www.luogu.com.cn/record/37056631</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> ufototal<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span>suiseitotal<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
-    string ufo<span class="token punctuation">,</span>suisei<span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>suisei<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>suisei<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//建议用.size()函数，注意取值范围</span>
-        suiseitotal<span class="token operator">*=</span><span class="token punctuation">(</span>suisei<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'@'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment">//cout&lt;&lt;"Total of suisei now is "&lt;&lt;suiseitotal&lt;&lt;endl;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">//cout&lt;&lt;suiseitotal&lt;&lt;" MOD 47 = ";</span>
-    suiseitotal<span class="token operator">%=</span><span class="token number">47</span><span class="token punctuation">;</span>
-    <span class="token comment">//cout&lt;&lt;suiseitotal&lt;&lt;endl;</span>
-    cin<span class="token operator">&gt;&gt;</span>ufo<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>ufo<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token comment">//建议用.size()函数，注意取值范围</span>
-        ufototal<span class="token operator">*=</span>ufo<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'@'</span><span class="token punctuation">;</span>
-        <span class="token comment">//cout&lt;&lt;"Total of team now is "&lt;&lt;ufototal&lt;&lt;endl;</span>
-    <span class="token punctuation">}</span>
-    <span class="token comment">//cout&lt;&lt;ufototal&lt;&lt;" MOD 47 = ";</span>
-    ufototal<span class="token operator">%=</span><span class="token number">47</span><span class="token punctuation">;</span>
-    <span class="token comment">//cout&lt;&lt;ufototal&lt;&lt;endl;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>suiseitotal<span class="token operator">==</span>ufototal<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        cout<span class="token operator">&lt;&lt;</span><span class="token string">"GO"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-        cout<span class="token operator">&lt;&lt;</span><span class="token string">"STAY"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*P1200 [USACO1.1]你的飞碟在这儿Your Ride Is Here</span></span><br><span class="line"><span class="comment">  众所周知，在每一个彗星后都有一只UFO。这些UFO时常来收集地球上的忠诚支持者。不幸的是，他们的飞碟每次出行都只能带上一组支持者。因此，他们要用一种聪明的方案让这些小组提前知道谁会被彗星带走。他们为每个彗星起了一个名字，通过这些名字来决定这个小组是不是被带走的那个特定的小组（你认为是谁给这些彗星取的名字呢？）。关于如何搭配的细节会在下面告诉你；</span></span><br><span class="line"><span class="comment">  你的任务是写一个程序，通过小组名和彗星名来决定这个小组是否能被那颗彗星后面的UFO带走。</span></span><br><span class="line"><span class="comment">  小组名和彗星名都以下列方式转换成一个数字：最终的数字就是名字中所有字母的积，其中A是1，Z是26。</span></span><br><span class="line"><span class="comment">  例如，USACO小组就是 21*19*1*3*15=17955。如果小组的数字 mod 47等于彗星的数字 mod 47,你就得告诉这个小组需要准备好被带走！</span></span><br><span class="line"><span class="comment">  （记住“a mod b”是a除以b的余数；34 mod 10等于44）</span></span><br><span class="line"><span class="comment">  写出一个程序，读入彗星名和小组名并算出用上面的方案能否将两个名字搭配起来</span></span><br><span class="line"><span class="comment">  如果能搭配，就输出“GO”，否则输出“STAY”。</span></span><br><span class="line"><span class="comment">  小组名和彗星名均是没有空格或标点的一串大写字母（不超过66个字母）。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/problem/P1200</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/37054987</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/37056015</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/37056631</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> ufototal=<span class="number">1</span>,suiseitotal=<span class="number">1</span>;</span><br><span class="line">    string ufo,suisei;</span><br><span class="line">    cin&gt;&gt;suisei;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;suisei.<span class="built_in">size</span>();i++){<span class="comment">//建议用.size()函数，注意取值范围</span></span><br><span class="line">        suiseitotal*=(suisei[i]-<span class="string">'@'</span>);</span><br><span class="line">        <span class="comment">//cout&lt;&lt;"Total of suisei now is "&lt;&lt;suiseitotal&lt;&lt;endl;</span></span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//cout&lt;&lt;suiseitotal&lt;&lt;" MOD 47 = ";</span></span><br><span class="line">    suiseitotal%=<span class="number">47</span>;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;suiseitotal&lt;&lt;endl;</span></span><br><span class="line">    cin&gt;&gt;ufo;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;ufo.<span class="built_in">size</span>();i++){ <span class="comment">//建议用.size()函数，注意取值范围</span></span><br><span class="line">        ufototal*=ufo[i]-<span class="string">'@'</span>;</span><br><span class="line">        <span class="comment">//cout&lt;&lt;"Total of team now is "&lt;&lt;ufototal&lt;&lt;endl;</span></span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//cout&lt;&lt;ufototal&lt;&lt;" MOD 47 = ";</span></span><br><span class="line">    ufototal%=<span class="number">47</span>;</span><br><span class="line">    <span class="comment">//cout&lt;&lt;ufototal&lt;&lt;endl;</span></span><br><span class="line">    <span class="keyword">if</span>(suiseitotal==ufototal){</span><br><span class="line">        cout&lt;&lt;<span class="string">"GO"</span>&lt;&lt;endl;</span><br><span class="line">    }<span class="keyword">else</span>{</span><br><span class="line">        cout&lt;&lt;<span class="string">"STAY"</span>&lt;&lt;endl;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>[^1]: 虚拟偶像团体 Hololive 成员 “星街彗星” 粉丝群体自称。</p>
 
     </div>

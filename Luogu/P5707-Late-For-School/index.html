@@ -267,7 +267,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -369,7 +369,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>931</span>
+      <span>1.1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -388,54 +388,10 @@ mjx-container[display="true"] + br {
     
     <div class="post-body" itemprop="articleBody">
         
-    <div id="aplayer-PmswfUJl" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="517713199" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
+    <div id="aplayer-ohKRhFDK" class="aplayer aplayer-tag-marker meting-tag-marker" data-id="517713199" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"></div>
 <p><s>都要迟到了为什么还在垃圾分类啊喂！</s></p>
 <span id="more"></span>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">/*--------------------------------/
-    P5707 【深基2.例12】上学迟到
-/--------------------------------*/</span>
-<span class="token comment">//https://www.luogu.com.cn/problem/P5707</span>
-
-<span class="token comment">//yyy 的学校要求早上 8 点前到达。学校到 yyy 的家一共有 s(s&lt;=10000) 米，</span>
-<span class="token comment">//而 yyy 可以以 v(v&lt;10000) 米每分钟的速度匀速走到学校。</span>
-<span class="token comment">//此外在上学路上它还要额外花 10 分钟时间进行垃圾分类。</span>
-<span class="token comment">//请问为了避免迟到 yyy 最晚什么时候出门？</span>
-<span class="token comment">//输出 HH:MM 的时间格式，不足两位时补零。由于路途遥远， yyy 可能不得不提前一天出发，不过不可能提前超过一天。</span>
-
-<span class="token comment">//https://www.luogu.com.cn/record/51650685</span>
-<span class="token comment">//https://www.luogu.com.cn/record/51650724</span>
-<span class="token comment">//https://www.luogu.com.cn/record/51650764</span>
-<span class="token comment">//https://www.luogu.com.cn/record/51650769</span>
-<span class="token comment">//https://www.luogu.com.cn/record/52423311</span>
-
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> s<span class="token punctuation">,</span>v<span class="token punctuation">;</span>
-    cin<span class="token operator">&gt;&gt;</span>s<span class="token operator">&gt;&gt;</span>v<span class="token punctuation">;</span>
-
-    <span class="token keyword">int</span> hh<span class="token operator">=</span><span class="token number">8</span><span class="token punctuation">,</span>mm<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span>m<span class="token operator">=</span>s<span class="token operator">/</span>v<span class="token operator">+</span><span class="token number">10</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token operator">%</span>v<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        m<span class="token operator">++</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    mm<span class="token operator">-=</span>m<span class="token punctuation">;</span>
-    <span class="token keyword">while</span><span class="token punctuation">(</span>mm<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        mm<span class="token operator">+=</span><span class="token number">60</span><span class="token punctuation">;</span>
-        hh<span class="token operator">--</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>hh<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            hh<span class="token operator">+=</span><span class="token number">24</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">if</span><span class="token punctuation">(</span>hh<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        cout<span class="token operator">&lt;&lt;</span><span class="token string">"0"</span><span class="token operator">&lt;&lt;</span>hh<span class="token operator">&lt;&lt;</span><span class="token string">":"</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span>hh<span class="token operator">&lt;&lt;</span><span class="token string">":"</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span><span class="token punctuation">(</span>mm<span class="token operator">&lt;</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        cout<span class="token operator">&lt;&lt;</span><span class="token string">"0"</span><span class="token operator">&lt;&lt;</span>mm<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span><span class="token keyword">else</span> cout<span class="token operator">&lt;&lt;</span>mm<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-    
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*--------------------------------/</span></span><br><span class="line"><span class="comment">    P5707 【深基2.例12】上学迟到</span></span><br><span class="line"><span class="comment">/--------------------------------*/</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/problem/P5707</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//yyy 的学校要求早上 8 点前到达。学校到 yyy 的家一共有 s(s&lt;=10000) 米，</span></span><br><span class="line"><span class="comment">//而 yyy 可以以 v(v&lt;10000) 米每分钟的速度匀速走到学校。</span></span><br><span class="line"><span class="comment">//此外在上学路上它还要额外花 10 分钟时间进行垃圾分类。</span></span><br><span class="line"><span class="comment">//请问为了避免迟到 yyy 最晚什么时候出门？</span></span><br><span class="line"><span class="comment">//输出 HH:MM 的时间格式，不足两位时补零。由于路途遥远， yyy 可能不得不提前一天出发，不过不可能提前超过一天。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/51650685</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/51650724</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/51650764</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/51650769</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/52423311</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    <span class="type">int</span> s,v;</span><br><span class="line">    cin&gt;&gt;s&gt;&gt;v;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> hh=<span class="number">8</span>,mm=<span class="number">0</span>,m=s/v+<span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span>(s%v){</span><br><span class="line">        m++;</span><br><span class="line">    }</span><br><span class="line">    mm-=m;</span><br><span class="line">    <span class="keyword">while</span>(mm&lt;<span class="number">0</span>){</span><br><span class="line">        mm+=<span class="number">60</span>;</span><br><span class="line">        hh--;</span><br><span class="line">        <span class="keyword">if</span>(hh&lt;<span class="number">0</span>){</span><br><span class="line">            hh+=<span class="number">24</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(hh&lt;<span class="number">10</span>){</span><br><span class="line">        cout&lt;&lt;<span class="string">"0"</span>&lt;&lt;hh&lt;&lt;<span class="string">":"</span>;</span><br><span class="line">    }<span class="keyword">else</span> cout&lt;&lt;hh&lt;&lt;<span class="string">":"</span>;</span><br><span class="line">    <span class="keyword">if</span>(mm&lt;<span class="number">10</span>){</span><br><span class="line">        cout&lt;&lt;<span class="string">"0"</span>&lt;&lt;mm&lt;&lt;endl;</span><br><span class="line">    }<span class="keyword">else</span> cout&lt;&lt;mm&lt;&lt;endl;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
     </div>
 

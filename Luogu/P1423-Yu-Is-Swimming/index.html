@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,7 +366,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>410</span>
+      <span>447</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -386,23 +386,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
         <p><s>你游你的关我 🔨 事情啊啊啊啊</s></p>
 <span id="more"></span>
-<pangu> </pangu><pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//洛谷 P1423 小玉在游泳 作者yeszy</span>
-<span class="token comment">//https://www.luogu.com.cn/problem/P1423</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">float</span> mubiao<span class="token punctuation">,</span>juli<span class="token punctuation">,</span>everytime<span class="token punctuation">,</span>step<span class="token punctuation">;</span> <span class="token comment">//目标路程 走出去的路程 每次走的路程 走的步数</span>
-	everytime<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span> <span class="token comment">//第一步走2m</span>
-	cin<span class="token operator">&gt;&gt;</span>mubiao<span class="token punctuation">;</span> <span class="token comment">//输入目标</span>
-	<span class="token keyword">while</span><span class="token punctuation">(</span>mubiao<span class="token operator">&gt;=</span>juli<span class="token punctuation">)</span> <span class="token comment">//while循环，达到条件直接结束</span>
-	<span class="token punctuation">{</span>
-		juli<span class="token operator">+=</span>everytime<span class="token punctuation">;</span> <span class="token comment">//上一次走出去的路程+每次里程=这一次的路程</span>
-		everytime<span class="token operator">*=</span><span class="token number">0.98</span><span class="token punctuation">;</span> <span class="token comment">//下次走的是上一次的98%</span>
-		step<span class="token operator">++</span><span class="token punctuation">;</span> <span class="token comment">//步数+1</span>
-	<span class="token punctuation">}</span>
-	cout<span class="token operator">&lt;&lt;</span>step<span class="token punctuation">;</span> <span class="token comment">//达到条件后循环结束，输出步数</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//程序终结</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//洛谷 P1423 小玉在游泳 作者yeszy</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/problem/P1423</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">float</span> mubiao,juli,everytime,step; <span class="comment">//目标路程 走出去的路程 每次走的路程 走的步数</span></span><br><span class="line">	everytime=<span class="number">2</span>; <span class="comment">//第一步走2m</span></span><br><span class="line">	cin&gt;&gt;mubiao; <span class="comment">//输入目标</span></span><br><span class="line">	<span class="keyword">while</span>(mubiao&gt;=juli) <span class="comment">//while循环，达到条件直接结束</span></span><br><span class="line">	{</span><br><span class="line">		juli+=everytime; <span class="comment">//上一次走出去的路程+每次里程=这一次的路程</span></span><br><span class="line">		everytime*=<span class="number">0.98</span>; <span class="comment">//下次走的是上一次的98%</span></span><br><span class="line">		step++; <span class="comment">//步数+1</span></span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;step; <span class="comment">//达到条件后循环结束，输出步数</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>; <span class="comment">//程序终结</span></span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
     </div>
 
     

@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,7 +366,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>786</span>
+      <span>919</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -386,38 +386,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
         <p>在学校机房做的。</p>
 <span id="more"></span>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//凯凯刚写了一篇美妙的作文，请问这篇作文的标题中有多少个字符？ </span>
-<span class="token comment">//注意：标题中可能包含大、小写英文字母、数字字符、空格和换行符。统计标题字 符数时，空格和换行符不计算在内。</span>
-<span class="token comment">//输入文件只有一行，一个字符串 ss。</span>
-<span class="token comment">//输出文件只有一行，包含一个整数，即作文标题的字符数（不含空格和换行符）。</span>
-<span class="token comment">//https://www.luogu.com.cn/record/34976915</span>
-<span class="token comment">//https://www.luogu.com.cn/record/34976929</span>
-<span class="token comment">//https://www.luogu.com.cn/record/34976938</span>
-<span class="token comment">//https://www.luogu.com.cn/record/34976962</span>
-<span class="token comment">//https://www.luogu.com.cn/record/34977007</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstdio&gt;</span></span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;cstring&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">int</span> ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
-	<span class="token keyword">char</span> s<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-	<span class="token function">gets</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//stdio.h或cstdio,适用于char变量,切忌string</span>
-	<span class="token keyword">int</span> lengths<span class="token operator">=</span><span class="token function">strlen</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//cstring</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>lengths<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;=</span><span class="token char">'a'</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;=</span><span class="token char">'z'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			ans<span class="token operator">++</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;=</span><span class="token char">'A'</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;=</span><span class="token char">'Z'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			ans<span class="token operator">++</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&gt;=</span><span class="token char">'0'</span> <span class="token operator">&amp;&amp;</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">&lt;=</span><span class="token char">'9'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-			ans<span class="token operator">++</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-	cout<span class="token operator">&lt;&lt;</span>ans<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//凯凯刚写了一篇美妙的作文，请问这篇作文的标题中有多少个字符？ </span></span><br><span class="line"><span class="comment">//注意：标题中可能包含大、小写英文字母、数字字符、空格和换行符。统计标题字 符数时，空格和换行符不计算在内。</span></span><br><span class="line"><span class="comment">//输入文件只有一行，一个字符串 ss。</span></span><br><span class="line"><span class="comment">//输出文件只有一行，包含一个整数，即作文标题的字符数（不含空格和换行符）。</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/34976915</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/34976929</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/34976938</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/34976962</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/34977007</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="type">char</span> s[<span class="number">5</span>];</span><br><span class="line">	<span class="built_in">gets</span>(s); <span class="comment">//stdio.h或cstdio,适用于char变量,切忌string</span></span><br><span class="line">	<span class="type">int</span> lengths=<span class="built_in">strlen</span>(s);<span class="comment">//cstring</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;lengths;i++){</span><br><span class="line">		<span class="keyword">if</span>(s[i]&gt;=<span class="string">'a'</span> &amp;&amp; s[i]&lt;=<span class="string">'z'</span>){</span><br><span class="line">			ans++;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(s[i]&gt;=<span class="string">'A'</span> &amp;&amp; s[i]&lt;=<span class="string">'Z'</span>){</span><br><span class="line">			ans++;</span><br><span class="line">		}</span><br><span class="line">		<span class="keyword">if</span>(s[i]&gt;=<span class="string">'0'</span> &amp;&amp; s[i]&lt;=<span class="string">'9'</span>){</span><br><span class="line">			ans++;</span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
     </div>
 

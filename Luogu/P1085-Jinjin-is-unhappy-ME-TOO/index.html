@@ -264,7 +264,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -366,7 +366,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>468</span>
+      <span>529</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -386,29 +386,7 @@ mjx-container[display="true"] + br {
     <div class="post-body" itemprop="articleBody">
         <p>赞美数组、逆推</p>
 <span id="more"></span>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//洛谷 P1085 不高兴的津津(NOIP2004)</span>
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;bits/stdc++.h&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-	<span class="token keyword">int</span> day<span class="token punctuation">,</span>night<span class="token punctuation">,</span>zong<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">,</span>max<span class="token punctuation">,</span>ans<span class="token punctuation">,</span>d<span class="token punctuation">;</span> <span class="token comment">//白天时长 晚间时长 一周7天时长的存储数组 最大时长 时间最久的那一天 </span>
-	max<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//归零</span>
-	ans<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> <span class="token comment">//便于在没有该日期时输出0</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span>d<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>d<span class="token operator">&lt;=</span><span class="token number">7</span><span class="token punctuation">;</span>d<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token comment">//正向数据录入</span>
-	<span class="token punctuation">{</span>
-		cin<span class="token operator">&gt;&gt;</span>day<span class="token operator">&gt;&gt;</span>night<span class="token punctuation">;</span>
-		zong<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">=</span>day<span class="token operator">+</span>night<span class="token punctuation">;</span>
-	<span class="token punctuation">}</span>
-	<span class="token keyword">for</span><span class="token punctuation">(</span>d<span class="token operator">=</span><span class="token number">7</span><span class="token punctuation">;</span>d<span class="token operator">&gt;=</span><span class="token number">1</span><span class="token punctuation">;</span>d<span class="token operator">--</span><span class="token punctuation">)</span><span class="token comment">//逆向推算（偷懒妙招）</span>
-	<span class="token punctuation">{</span>
-		<span class="token keyword">if</span><span class="token punctuation">(</span>zong<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">&gt;</span>max<span class="token operator">&amp;&amp;</span>zong<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">&gt;</span><span class="token number">8</span><span class="token punctuation">)</span> <span class="token comment">//判断值是否最大/是否等于8</span>
-		<span class="token punctuation">{</span>
-			zong<span class="token punctuation">[</span>d<span class="token punctuation">]</span><span class="token operator">=</span>max<span class="token punctuation">;</span> <span class="token comment">//总数最大者为max</span>
-			ans<span class="token operator">=</span>d<span class="token punctuation">;</span> <span class="token comment">//同时max对应的天数为最大日</span>
-		<span class="token punctuation">}</span>
-	<span class="token punctuation">}</span>
-	cout<span class="token operator">&lt;&lt;</span>ans<span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> <span class="token comment">//结果输出</span>
-	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//洛谷 P1085 不高兴的津津(NOIP2004)</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">	<span class="type">int</span> day,night,zong[<span class="number">7</span>],max,ans,d; <span class="comment">//白天时长 晚间时长 一周7天时长的存储数组 最大时长 时间最久的那一天 </span></span><br><span class="line">	max=<span class="number">0</span>; <span class="comment">//归零</span></span><br><span class="line">	ans=<span class="number">0</span>; <span class="comment">//便于在没有该日期时输出0</span></span><br><span class="line">	<span class="keyword">for</span>(d=<span class="number">1</span>;d&lt;=<span class="number">7</span>;d++) <span class="comment">//正向数据录入</span></span><br><span class="line">	{</span><br><span class="line">		cin&gt;&gt;day&gt;&gt;night;</span><br><span class="line">		zong[d]=day+night;</span><br><span class="line">	}</span><br><span class="line">	<span class="keyword">for</span>(d=<span class="number">7</span>;d&gt;=<span class="number">1</span>;d--)<span class="comment">//逆向推算（偷懒妙招）</span></span><br><span class="line">	{</span><br><span class="line">		<span class="keyword">if</span>(zong[d]&gt;max&amp;&amp;zong[d]&gt;<span class="number">8</span>) <span class="comment">//判断值是否最大/是否等于8</span></span><br><span class="line">		{</span><br><span class="line">			zong[d]=max; <span class="comment">//总数最大者为max</span></span><br><span class="line">			ans=d; <span class="comment">//同时max对应的天数为最大日</span></span><br><span class="line">		}</span><br><span class="line">	}</span><br><span class="line">	cout&lt;&lt;ans&lt;&lt;endl; <span class="comment">//结果输出</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>本文首发洛谷博客 <span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL2Jsb2cvMzAxNzY1L1AxMDg1LUppbmdqaW5nLWlzLXVuaGFwcHktTUUtVE9P">不高兴的津津<i class="fa fa-external-link-alt"></i></span></p>
 
     </div>

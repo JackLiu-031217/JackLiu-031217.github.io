@@ -265,7 +265,7 @@ mjx-container[display="true"] + br {
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -361,7 +361,7 @@ mjx-container[display="true"] + br {
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>916</span>
+      <span>1k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -395,34 +395,13 @@ mjx-container[display="true"] + br {
 <p>输出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo separator="true">,</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">a,b,c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">b</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">c</span></span></span></span> 最终的值。</p>
 <h2 id="样例-1">样例 #1</h2>
 <h3 id="样例输入-1">样例输入 #1</h3>
-<pre class="line-numbers language-none"><code class="language-none">a:=3;b:=4;c:=5;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>:=<span class="number">3</span>;<span class="selector-tag">b</span>:=<span class="number">4</span>;c:=<span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="样例输出-1">样例输出 #1</h3>
-<pre class="line-numbers language-none"><code class="language-none">3 4 5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<figure class="highlight basic"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">3 </span><span class="number">4</span> <span class="number">5</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="提示">提示</h2>
 <p>输入的 PASCAL 语言长度不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>255</mn></mrow><annotation encoding="application/x-tex">255</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">5</span><span class="mord">5</span></span></span></span>。</p>
 <h2 id="代码部分">代码部分</h2>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token comment">//P1597 语句解析</span>
-<span class="token comment">//https://www.luogu.com.cn/problem/P1597</span>
-
-<span class="token comment">//条件写死了是好做……</span>
-<span class="token comment">//假如，我是说假如，有一道题让给多位数赋值……那可真是一道好题……</span>
-<span class="token comment">//https://www.luogu.com.cn/record/87683311</span>
-
-<span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span><span class="token string">&lt;iostream&gt;</span></span>
-<span class="token keyword">using</span> <span class="token keyword">namespace</span> std<span class="token punctuation">;</span>
-<span class="token keyword">int</span> n<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-string cc<span class="token punctuation">;</span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    cin<span class="token operator">&gt;&gt;</span>cc<span class="token punctuation">;</span>
-    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>cc<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span>cc<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span><span class="token char">'='</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">int</span> op<span class="token operator">=</span>cc<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'a'</span><span class="token punctuation">;</span>
-            n<span class="token punctuation">[</span>op<span class="token punctuation">]</span><span class="token operator">=</span>cc<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&gt;=</span><span class="token char">'0'</span><span class="token operator">&amp;&amp;</span>cc<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">&lt;=</span><span class="token char">'9'</span><span class="token operator">?</span>cc<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'0'</span><span class="token operator">:</span>n<span class="token punctuation">[</span>cc<span class="token punctuation">[</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">-</span><span class="token char">'a'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d %d %d\n"</span><span class="token punctuation">,</span>n<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>n<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>n<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<figure class="highlight cpp"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//P1597 语句解析</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/problem/P1597</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//条件写死了是好做……</span></span><br><span class="line"><span class="comment">//假如，我是说假如，有一道题让给多位数赋值……那可真是一道好题……</span></span><br><span class="line"><span class="comment">//https://www.luogu.com.cn/record/87683311</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n[<span class="number">3</span>];</span><br><span class="line">string cc;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>{</span><br><span class="line">    cin&gt;&gt;cc;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;cc.<span class="built_in">length</span>();i++){</span><br><span class="line">        <span class="keyword">if</span>(cc[i]==<span class="string">'='</span>){</span><br><span class="line">            <span class="type">int</span> op=cc[i<span class="number">-2</span>]-<span class="string">'a'</span>;</span><br><span class="line">            n[op]=cc[i+<span class="number">1</span>]&gt;=<span class="string">'0'</span>&amp;&amp;cc[i+<span class="number">1</span>]&lt;=<span class="string">'9'</span>?cc[i+<span class="number">1</span>]-<span class="string">'0'</span>:n[cc[i+<span class="number">1</span>]-<span class="string">'a'</span>];</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>,n[<span class="number">0</span>],n[<span class="number">1</span>],n[<span class="number">2</span>]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 
     </div>
 
@@ -461,6 +440,9 @@ string cc<span class="token punctuation">;</span>
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/Luogu/P2145-Summation-of-sets/" rel="next" title="洛谷笔记 - P2415 集合求和">
+                  洛谷笔记 - P2415 集合求和 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
