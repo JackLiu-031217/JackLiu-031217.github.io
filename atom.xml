@@ -6,7 +6,7 @@
   <link href="https://blog.justprog.eu.org/atom.xml" rel="self"/>
   
   <link href="https://blog.justprog.eu.org/"/>
-  <updated>2022-12-08T01:11:28.489Z</updated>
+  <updated>2023-01-30T06:48:15.855Z</updated>
   <id>https://blog.justprog.eu.org/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>P1065 [NOIP2006 提高组] 作业调度方案</title>
+    <link href="https://blog.justprog.eu.org/Luogu/P1065-Homework-Scheduling-Scheme/"/>
+    <id>https://blog.justprog.eu.org/Luogu/P1065-Homework-Scheduling-Scheme/</id>
+    <published>2023-01-30T06:10:29.000Z</published>
+    <updated>2023-01-30T06:48:15.855Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;题面很长，读了很久，没读懂，遂弃键盘，睡之&lt;/p&gt;
+&lt;p&gt;才怪！&lt;/p&gt;
+&lt;p&gt;不过也起码花了我一上午的时间搞……&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;太痛苦了！太痛苦了！&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&quot;/post-images/%5D%25SR2A%5D9PEH%28I%40RTO%5B~H58Q.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+    <category term="NOIp 提高组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%8F%90%E9%AB%98%E7%BB%84/"/>
+    
+    <category term="2006" scheme="https://blog.justprog.eu.org/tags/2006/"/>
+    
+  </entry>
+  
+  <entry>
     <title>洛谷笔记 - P3799 妖梦拼木棒</title>
     <link href="https://blog.justprog.eu.org/Luogu/P3799-Konpaku-Youmu-Making-Triangle-With-Sticks/"/>
     <id>https://blog.justprog.eu.org/Luogu/P3799-Konpaku-Youmu-Making-Triangle-With-Sticks/</id>
-    <published>2022-12-08T01:00:10.229Z</published>
-    <updated>2022-12-08T01:11:28.489Z</updated>
+    <published>2022-12-08T01:00:10.000Z</published>
+    <updated>2023-01-30T06:48:15.953Z</updated>
     
     
     <summary type="html">&lt;p&gt;不看题解的话……&lt;/p&gt;
@@ -31,7 +58,13 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="枚举" scheme="https://blog.justprog.eu.org/tags/%E6%9E%9A%E4%B8%BE/"/>
+    
+    <category term="洛谷原创" scheme="https://blog.justprog.eu.org/tags/%E6%B4%9B%E8%B0%B7%E5%8E%9F%E5%88%9B/"/>
+    
+    <category term="组合数学" scheme="https://blog.justprog.eu.org/tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -39,8 +72,8 @@
     <title>洛谷笔记 - P2241 统计方形（数据加强版）</title>
     <link href="https://blog.justprog.eu.org/Luogu/P2241-Count-Squares-Data-Enhanced-Ver/"/>
     <id>https://blog.justprog.eu.org/Luogu/P2241-Count-Squares-Data-Enhanced-Ver/</id>
-    <published>2022-11-23T00:53:33.547Z</published>
-    <updated>2022-11-23T00:56:55.184Z</updated>
+    <published>2022-11-23T00:53:33.000Z</published>
+    <updated>2023-01-30T06:48:15.939Z</updated>
     
     
     <summary type="html">&lt;p&gt;真的，这个题，你扔给高中的我，估计还能有点救。&lt;/p&gt;
@@ -49,7 +82,11 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="枚举" scheme="https://blog.justprog.eu.org/tags/%E6%9E%9A%E4%B8%BE/"/>
+    
+    <category term="数学" scheme="https://blog.justprog.eu.org/tags/%E6%95%B0%E5%AD%A6/"/>
     
   </entry>
   
@@ -57,8 +94,8 @@
     <title>洛谷笔记 - P3654 First Step (ファーストステップ)</title>
     <link href="https://blog.justprog.eu.org/Luogu/P3654-First-Step-of-Aquors/"/>
     <id>https://blog.justprog.eu.org/Luogu/P3654-First-Step-of-Aquors/</id>
-    <published>2022-11-23T00:42:16.323Z</published>
-    <updated>2022-11-23T00:50:49.764Z</updated>
+    <published>2022-11-23T00:42:16.000Z</published>
+    <updated>2023-01-30T06:48:15.950Z</updated>
     
     
     <summary type="html">&lt;p&gt;Lovelive 可还行？&lt;/p&gt;
@@ -67,7 +104,13 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+    <category term="枚举" scheme="https://blog.justprog.eu.org/tags/%E6%9E%9A%E4%B8%BE/"/>
+    
+    <category term="洛谷月赛" scheme="https://blog.justprog.eu.org/tags/%E6%B4%9B%E8%B0%B7%E6%9C%88%E8%B5%9B/"/>
     
   </entry>
   
@@ -75,8 +118,8 @@
     <title>洛谷笔记 - P4924 [1007] 魔法少女小 Scarlet</title>
     <link href="https://blog.justprog.eu.org/Luogu/P4924-Mahoshojo-Scarlet/"/>
     <id>https://blog.justprog.eu.org/Luogu/P4924-Mahoshojo-Scarlet/</id>
-    <published>2022-10-06T08:17:20.663Z</published>
-    <updated>2022-10-06T08:29:56.682Z</updated>
+    <published>2022-10-06T08:17:20.000Z</published>
+    <updated>2023-01-30T06:48:15.955Z</updated>
     
     
     <summary type="html">&lt;p&gt;年轻人，要和我签订契约，成为 &lt;s&gt;魔法少女&lt;/s&gt; CS 大神吗？&lt;/p&gt;
@@ -85,16 +128,24 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+    <category term="枚举" scheme="https://blog.justprog.eu.org/tags/%E6%9E%9A%E4%B8%BE/"/>
+    
+    <category term="递归" scheme="https://blog.justprog.eu.org/tags/%E9%80%92%E5%BD%92/"/>
+    
+    <category term="洛谷月赛" scheme="https://blog.justprog.eu.org/tags/%E6%B4%9B%E8%B0%B7%E6%9C%88%E8%B5%9B/"/>
     
   </entry>
   
   <entry>
     <title>洛谷笔记 - B2029 大象喝水</title>
-    <link href="https://blog.justprog.eu.org/Luogu/B2025-Elephant-Drinking-Water/"/>
-    <id>https://blog.justprog.eu.org/Luogu/B2025-Elephant-Drinking-Water/</id>
-    <published>2022-10-06T08:14:26.934Z</published>
-    <updated>2022-10-06T08:16:40.775Z</updated>
+    <link href="https://blog.justprog.eu.org/Luogu/B2029-Elephant-Drinking-Water/"/>
+    <id>https://blog.justprog.eu.org/Luogu/B2029-Elephant-Drinking-Water/</id>
+    <published>2022-10-06T08:14:26.000Z</published>
+    <updated>2023-01-30T06:48:15.813Z</updated>
     
     
     <summary type="html">&lt;p&gt;水题（各种意义上的）&lt;/p&gt;</summary>
@@ -102,7 +153,9 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="顺序结构" scheme="https://blog.justprog.eu.org/tags/%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -110,8 +163,8 @@
     <title>洛谷笔记 - P1518 [USACO2.4] 两只塔姆沃斯牛 The Tamworth Two</title>
     <link href="https://blog.justprog.eu.org/Luogu/P1518-The-Tamworth-Two-USACO2.4/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1518-The-Tamworth-Two-USACO2.4/</id>
-    <published>2022-10-04T11:55:29.184Z</published>
-    <updated>2022-10-04T11:57:57.552Z</updated>
+    <published>2022-10-04T11:55:29.000Z</published>
+    <updated>2023-01-30T06:48:15.904Z</updated>
     
     
     <summary type="html">&lt;p&gt;塔 (t) 姆 (m) 的 (d)，沃 (w) 斯 (s) 了 (l)&lt;/p&gt;</summary>
@@ -119,16 +172,20 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+    <category term="USACO" scheme="https://blog.justprog.eu.org/tags/USACO/"/>
     
   </entry>
   
   <entry>
     <title>洛谷笔记 - P2415 集合求和</title>
-    <link href="https://blog.justprog.eu.org/Luogu/P2145-Summation-of-sets/"/>
-    <id>https://blog.justprog.eu.org/Luogu/P2145-Summation-of-sets/</id>
-    <published>2022-09-29T00:48:40.489Z</published>
-    <updated>2022-09-29T00:51:28.481Z</updated>
+    <link href="https://blog.justprog.eu.org/Luogu/P2415-Summation-of-sets/"/>
+    <id>https://blog.justprog.eu.org/Luogu/P2415-Summation-of-sets/</id>
+    <published>2022-09-29T00:48:40.000Z</published>
+    <updated>2023-01-30T06:48:15.941Z</updated>
     
     
     <summary type="html">&lt;p&gt;有一说一，数学不好发现不出来规律的，拿到这道题确实会很棘手。&lt;/p&gt;
@@ -140,7 +197,11 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="数学" scheme="https://blog.justprog.eu.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="排列组合" scheme="https://blog.justprog.eu.org/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/"/>
     
   </entry>
   
@@ -149,7 +210,7 @@
     <link href="https://blog.justprog.eu.org/Luogu/P1597-Sentence-Analysis/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1597-Sentence-Analysis/</id>
     <published>2022-09-26T14:39:00.000Z</published>
-    <updated>2022-09-26T14:44:54.488Z</updated>
+    <updated>2023-01-30T06:48:15.914Z</updated>
     
     
     <summary type="html">&lt;p&gt;条件写死了是好做……&lt;/p&gt;
@@ -159,7 +220,11 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+    <category term="字符串" scheme="https://blog.justprog.eu.org/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -168,7 +233,7 @@
     <link href="https://blog.justprog.eu.org/Luogu/P1205-Transformations-USACO1_2/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1205-Transformations-USACO1_2/</id>
     <published>2022-09-25T07:43:10.000Z</published>
-    <updated>2022-09-25T07:57:14.297Z</updated>
+    <updated>2023-01-30T06:48:15.884Z</updated>
     
     
     <summary type="html">&lt;p&gt;超长超啰嗦代码警告！&lt;/p&gt;</summary>
@@ -176,7 +241,11 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="搜索" scheme="https://blog.justprog.eu.org/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="USACO" scheme="https://blog.justprog.eu.org/tags/USACO/"/>
     
   </entry>
   
@@ -185,7 +254,7 @@
     <link href="https://blog.justprog.eu.org/Luogu/P5019-Laid-Down-Roads-NOIP2018S/"/>
     <id>https://blog.justprog.eu.org/Luogu/P5019-Laid-Down-Roads-NOIP2018S/</id>
     <published>2022-08-24T00:12:36.000Z</published>
-    <updated>2022-09-25T08:01:10.462Z</updated>
+    <updated>2023-01-30T06:48:15.959Z</updated>
     
     
     <summary type="html">&lt;p&gt;做法貌似和部分 Tag 沾不上边啊&lt;/p&gt;
@@ -194,7 +263,15 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="NOIp 提高组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%8F%90%E9%AB%98%E7%BB%84/"/>
+    
+    <category term="贪心" scheme="https://blog.justprog.eu.org/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+    <category term="2018" scheme="https://blog.justprog.eu.org/tags/2018/"/>
+    
+    <category term="树状数组" scheme="https://blog.justprog.eu.org/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
     
   </entry>
   
@@ -202,8 +279,8 @@
     <title>洛谷笔记 - P1969 [NOIP2013 提高组] 积木大赛</title>
     <link href="https://blog.justprog.eu.org/Luogu/P1969-Block-Competition-NOIP2013S/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1969-Block-Competition-NOIP2013S/</id>
-    <published>2022-08-21T02:01:14.449Z</published>
-    <updated>2022-09-25T07:56:15.101Z</updated>
+    <published>2022-08-21T02:01:14.000Z</published>
+    <updated>2023-01-30T06:48:15.930Z</updated>
     
     
     <summary type="html">&lt;p&gt;一道题的思路有很多，别在一棵树上吊死。&lt;/p&gt;</summary>
@@ -211,7 +288,19 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+    <category term="NOIp 提高组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%8F%90%E9%AB%98%E7%BB%84/"/>
+    
+    <category term="贪心" scheme="https://blog.justprog.eu.org/tags/%E8%B4%AA%E5%BF%83/"/>
+    
+    <category term="递归" scheme="https://blog.justprog.eu.org/tags/%E9%80%92%E5%BD%92/"/>
+    
+    <category term="2013" scheme="https://blog.justprog.eu.org/tags/2013/"/>
+    
+    <category term="2018" scheme="https://blog.justprog.eu.org/tags/2018/"/>
     
   </entry>
   
@@ -219,8 +308,8 @@
     <title>洛谷笔记 - P1011 [NOIP1998 提高组] 车站</title>
     <link href="https://blog.justprog.eu.org/Luogu/P1011-Railway-Station-NOIP1998S/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1011-Railway-Station-NOIP1998S/</id>
-    <published>2022-08-21T01:33:46.249Z</published>
-    <updated>2022-08-21T01:55:25.108Z</updated>
+    <published>2022-08-21T01:33:46.000Z</published>
+    <updated>2023-01-30T06:48:15.836Z</updated>
     
     
     <summary type="html">&lt;p&gt;暴力出奇迹…… 算是？&lt;/p&gt;</summary>
@@ -228,20 +317,40 @@
     
     
     
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="NOIp 提高组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%8F%90%E9%AB%98%E7%BB%84/"/>
+    
+    <category term="1998" scheme="https://blog.justprog.eu.org/tags/1998/"/>
+    
+    <category term="数学" scheme="https://blog.justprog.eu.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="斐波那契" scheme="https://blog.justprog.eu.org/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/"/>
+    
   </entry>
   
   <entry>
     <title>洛谷笔记 - P1010 [NOIP1998 普及组] 幂次方</title>
     <link href="https://blog.justprog.eu.org/Luogu/P1010-Power-NOIP1999J/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1010-Power-NOIP1999J/</id>
-    <published>2022-08-21T01:20:38.330Z</published>
-    <updated>2022-08-21T01:57:24.096Z</updated>
+    <published>2022-08-21T01:20:38.000Z</published>
+    <updated>2023-01-30T06:48:15.834Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img data-src=&quot;../../post-images/0d338744ebf81a4ce2c14036d72a6059242da65a.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</summary>
     
     
     
+    
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="NOIp 普及组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%99%AE%E5%8F%8A%E7%BB%84/"/>
+    
+    <category term="1998" scheme="https://blog.justprog.eu.org/tags/1998/"/>
+    
+    <category term="数学" scheme="https://blog.justprog.eu.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="分治" scheme="https://blog.justprog.eu.org/tags/%E5%88%86%E6%B2%BB/"/>
     
   </entry>
   
@@ -250,7 +359,7 @@
     <link href="https://blog.justprog.eu.org/Luogu/P1965-Circle-Game-NOIP2013S/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1965-Circle-Game-NOIP2013S/</id>
     <published>2022-08-14T03:37:45.000Z</published>
-    <updated>2022-08-14T03:40:56.378Z</updated>
+    <updated>2023-01-30T06:48:15.928Z</updated>
     
     
     <summary type="html">&lt;p&gt;别转了，我晕辣 @_@&lt;/p&gt;</summary>
@@ -258,7 +367,15 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+    <category term="NOIp 提高组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%8F%90%E9%AB%98%E7%BB%84/"/>
+    
+    <category term="数学" scheme="https://blog.justprog.eu.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="2013" scheme="https://blog.justprog.eu.org/tags/2013/"/>
     
   </entry>
   
@@ -267,7 +384,7 @@
     <link href="https://blog.justprog.eu.org/Luogu/P1226-Exponentiation-By-Squaring-Template/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1226-Exponentiation-By-Squaring-Template/</id>
     <published>2022-08-14T02:47:51.000Z</published>
-    <updated>2022-08-14T03:29:56.372Z</updated>
+    <updated>2023-01-30T06:48:15.886Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;img data-src=&quot;/post-images/yiyandingzhen_ji.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</summary>
@@ -275,7 +392,13 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="数学" scheme="https://blog.justprog.eu.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="递推" scheme="https://blog.justprog.eu.org/tags/%E9%80%92%E6%8E%A8/"/>
+    
+    <category term="递归" scheme="https://blog.justprog.eu.org/tags/%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
@@ -284,7 +407,7 @@
     <link href="https://blog.justprog.eu.org/Luogu/P1177-Quicksort-Template/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1177-Quicksort-Template/</id>
     <published>2022-08-12T23:47:27.000Z</published>
-    <updated>2022-08-13T00:08:57.499Z</updated>
+    <updated>2023-01-30T06:48:15.878Z</updated>
     
     
     <summary type="html">&lt;p&gt;复健 ing…&lt;/p&gt;</summary>
@@ -292,7 +415,11 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
+    
+    <category term="排序" scheme="https://blog.justprog.eu.org/tags/%E6%8E%92%E5%BA%8F/"/>
     
   </entry>
   
@@ -316,7 +443,7 @@
     <link href="https://blog.justprog.eu.org/Luogu/P1443-Horse-Traversal/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1443-Horse-Traversal/</id>
     <published>2022-06-08T23:15:23.000Z</published>
-    <updated>2022-06-09T00:03:31.577Z</updated>
+    <updated>2023-01-30T06:48:15.902Z</updated>
     
     
     <summary type="html">&lt;p&gt;这道题是备考摸鱼的时候做的，应该能算&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9vaS13aWtpLm9yZy9zZWFyY2gvYmZzLw==&quot;&gt;广度优先搜索&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;的模板？&lt;/p&gt;</summary>
@@ -324,7 +451,15 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="搜索" scheme="https://blog.justprog.eu.org/tags/%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="广度优先搜索" scheme="https://blog.justprog.eu.org/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="BFS" scheme="https://blog.justprog.eu.org/tags/BFS/"/>
+    
+    <category term="队列" scheme="https://blog.justprog.eu.org/tags/%E9%98%9F%E5%88%97/"/>
     
   </entry>
   
@@ -333,7 +468,7 @@
     <link href="https://blog.justprog.eu.org/Luogu/P2058-Seaside-Bay-NOIP2016/"/>
     <id>https://blog.justprog.eu.org/Luogu/P2058-Seaside-Bay-NOIP2016/</id>
     <published>2022-04-10T06:57:00.000Z</published>
-    <updated>2022-04-10T07:29:36.481Z</updated>
+    <updated>2023-01-30T07:00:19.383Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9vaS13aWtpLm9yZy9kcy9zdGFjay8=&quot;&gt;栈&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;真好用。&lt;/p&gt;</summary>
@@ -341,24 +476,13 @@
     
     
     
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
     
-  </entry>
-  
-  <entry>
-    <title>洛谷笔记 - P5587 打字练习</title>
-    <link href="https://blog.justprog.eu.org/Luogu/P5587-Keyboard-Typing-Training/"/>
-    <id>https://blog.justprog.eu.org/Luogu/P5587-Keyboard-Typing-Training/</id>
-    <published>2022-04-10T06:20:20.000Z</published>
-    <updated>2022-04-10T06:49:45.080Z</updated>
+    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
     
+    <category term="NOIp 普及组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%99%AE%E5%8F%8A%E7%BB%84/"/>
     
-    <summary type="html">&lt;p&gt;做这道题的时候我觉得我确实是个铸币。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="Luogu" scheme="https://blog.justprog.eu.org/tags/Luogu/"/>
+    <category term="2016" scheme="https://blog.justprog.eu.org/tags/2016/"/>
     
   </entry>
   
