@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://fonts.loli.net" crossorigin>
+<link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Noto+Sans:300,300italic,400,400italic,700,700italic%7CNoto+Sans+SC:300,300italic,400,400italic,700,700italic%7CNoto+Serif:300,300italic,400,400italic,700,700italic%7CJetBrains+Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/pace-js@1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://unpkg.com/pace-js@1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"blog.justprog.eu.org","root":"/","images":"/images,%20post-images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":true,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"width":240},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.json","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="https://unpkg.com/hexo-theme-next@8.14.1/source/js/config.js"></script>
+
+
+
+<link rel="canonical" href="https://blog.justprog.eu.org/Notes/Tables-For-scanf()-printf()-Format/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://blog.justprog.eu.org/Notes/Tables-For-scanf()-printf()-Format/","path":"Notes/Tables-For-scanf()-printf()-Format/","title":"scanf ()/printf () 的输出用格式参数"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>scanf ()/printf () 的输出用格式参数 | Just Prog!</title>
+  
+
+
+
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{&quot;token&quot;: &quot;06519e5a912344a597ed0efdd5d5c10d&quot;}'></script>
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style><link rel="alternate" href="/atom.xml" title="Just Prog!" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Just Prog!</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Coding with Love & Peace.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-友链"><a href="/links" rel="section"><i class="fa fa-user-group fa-fw"></i>友链</a></li><li class="menu-item menu-item-rss"><a href="/atom.xml" rel="section"><i class="fa fa-rss fa-fw"></i>RSS</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#scanf"><span class="nav-number">1.</span> <span class="nav-text">scanf()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#printf"><span class="nav-number">2.</span> <span class="nav-text">printf()</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Just Prog"
+      src="/images/avatar_square.png">
+  <p class="site-author-name" itemprop="name">Just Prog</p>
+  <div class="site-description" itemprop="description">Coding with Love & Peace.</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">52</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1c3QtUHJvZw==" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;Just-Prog"><i class="fab fa-github fa-fw"></i></span>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><img src="https://unpkg.com/@creativecommons/vocabulary@2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://blog.justprog.eu.org/Notes/Tables-For-scanf()-printf()-Format/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar_square.png">
+      <meta itemprop="name" content="Just Prog">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Just Prog!">
+      <meta itemprop="description" content="Coding with Love & Peace.">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="scanf ()/printf () 的输出用格式参数 | Just Prog!">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          scanf ()/printf () 的输出用格式参数
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-02-01 08:17:42 / 修改时间：10:04:27" itemprop="dateCreated datePublished" datetime="2023-02-01T08:17:42+08:00">2023-02-01</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>因为正在做的题需要更快的 IO，所以转用了 <code>scanf()</code> 与 <code>printf()</code> 函数，记录下函数的参数。</p>
+<span id="more"></span>
+<p>原文：</p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jcHJvZ3JhbW1pbmcvYy1mdW5jdGlvbi1zY2FuZi5odG1s">https://www.runoob.com/cprogramming/c-function-scanf.html<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jcHJvZ3JhbW1pbmcvYy1mdW5jdGlvbi1wcmludGYuaHRtbA==">https://www.runoob.com/cprogramming/c-function-printf.html<i class="fa fa-external-link-alt"></i></span></p>
+<h2 id="scanf">scanf()</h2>
+<p>format 说明符形式为:</p>
+<figure class="highlight ini"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[=%[*]</span><span class="section">[width]</span><span class="section">[modifiers]</span><span class="attr">type</span>=]</span><br></pre></td></tr></tbody></table></figure>
+<p>具体讲解如下：</p>
+<table class="reference notranslate">
+  <tbody>
+    <tr>
+      <th style="width: 5%">参数</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td> *</td>
+      <td>
+        这是一个可选的星号，表示数据是从流 stream
+        中读取的，但是可以被忽视，即它不存储在对应的参数中。
+      </td>
+    </tr>
+    <tr>
+      <td>width</td>
+      <td> 这指定了在当前读取操作中读取的最大字符数。</td>
+    </tr>
+    <tr>
+      <td>modifiers</td>
+      <td>
+        为对应的附加参数所指向的数据指定一个不同于整型（针对 d、i 和
+        n）、无符号整型（针对 o、u 和 x）或浮点型（针对 e、f 和 g）的大小： h
+        ：短整型（针对 d、i 和 n），或无符号短整型（针对 o、u 和 x） l
+        ：长整型（针对 d、i 和 n），或无符号长整型（针对 o、u 和
+        x），或双精度型（针对 e、f 和 g） L ：长双精度型（针对 e、f 和 g）
+      </td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>
+        一个字符，指定了要被读取的数据类型以及数据读取方式。具体参见下一个表格。
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p><b>scanf 类型说明符：</b></p>
+<table class="reference notranslate">
+  <tbody>
+    <tr>
+      <th style="width: 15%">类型</th>
+      <th>合格的输入</th>
+      <th width="15%">参数的类型</th>
+    </tr>
+    <tr>
+      <td> %a、%A</td>
+      <td> 读入一个浮点值 (仅 C99 有效)。</td>
+      <td>float *</td>
+    </tr>
+    <tr>
+      <td>%c</td>
+      <td>
+        单个字符：读取下一个字符。如果指定了一个不为 1 的宽度 width，函数会读取
+        width
+        个字符，并通过参数传递，把它们存储在数组中连续位置。在末尾不会追加空字符。
+      </td>
+      <td>char *</td>
+    </tr>
+    <tr>
+      <td>%d</td>
+      <td> 十进制整数：数字前面的 + 或 - 号是可选的。</td>
+      <td>int *</td>
+    </tr>
+    <tr>
+      <td>%e、%E、%f、%F、%g、%G</td>
+      <td>
+        浮点数：包含了一个小数点、一个可选的前置符号 + 或 -、一个可选的后置字符
+        e 或 E，以及一个十进制数字。两个有效的实例 -732.103 和 7.12e4
+      </td>
+      <td>float *</td>
+    </tr>
+    <tr>
+      <td>%i</td>
+      <td> 读入十进制，八进制，十六进制整数 。</td>
+      <td>int *</td>
+    </tr>
+    <tr>
+      <td>%o</td>
+      <td> 八进制整数。</td>
+      <td>int *</td>
+    </tr>
+    <tr>
+      <td>%s</td>
+      <td>
+        字符串。这将读取连续字符，直到遇到一个空格字符（空格字符可以是空白、换行和制表符）。
+      </td>
+      <td>char *</td>
+    </tr>
+    <tr>
+      <td>%u</td>
+      <td> 无符号的十进制整数。</td>
+      <td>unsigned int *</td>
+    </tr>
+    <tr>
+      <td>%x、%X</td>
+      <td> 十六进制整数。</td>
+      <td>int *</td>
+    </tr>
+    <tr>
+      <td>%p</td>
+      <td> 读入一个指针 。</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>%[]</td>
+      <td> 扫描字符集合 。</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>%%</td>
+      <td> 读 % 符号。</td>
+      <td>&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+<h2 id="printf">printf()</h2>
+<p>format 标签属性是 <code>%[flags][width][.precision][length]specifier</code>，具体讲解如下：</p>
+<table class="reference">
+  <tbody>
+    <tr>
+      <th>格式字符</th>
+      <th>意义</th>
+    </tr>
+    <tr>
+      <td> a, A</td>
+      <td>
+        <p>以十六进制形式输出浮点数 (C99 新增)。</p>
+        <p>
+          实例 <span class="marked">printf("pi=%a\n", 3.14);</span> 输出
+          <strong>pi=0x1.91eb86p+1</strong>。
+        </p>
+      </td>
+    </tr>
+    <tr></tr>
+    <tr>
+      <td>d</td>
+      <td> 以十进制形式输出带符号整数 (正数不输出符号)</td>
+    </tr>
+    <tr>
+      <td>o</td>
+      <td> 以八进制形式输出无符号整数 (不输出前缀 0)</td>
+    </tr>
+    <tr>
+      <td>x,X</td>
+      <td> 以十六进制形式输出无符号整数 (不输出前缀 Ox)</td>
+    </tr>
+    <tr>
+      <td>u</td>
+      <td> 以十进制形式输出无符号整数</td>
+    </tr>
+    <tr>
+      <td> f</td>
+      <td> 以小数形式输出单、双精度实数 <sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="不指定位数的情况下默认输出6位小数。
+">[1]</span></a></sup></td>
+    </tr>
+    <tr>
+      <td>e,E</td>
+      <td> 以指数形式输出单、双精度实数</td>
+    </tr>
+    <tr>
+      <td> g,G</td>
+      <td> 以 % f 或 % e 中较短的输出宽度输出单、双精度实数</td>
+    </tr>
+    <tr>
+      <td> c</td>
+      <td> 输出单个字符</td>
+    </tr>
+    <tr>
+      <td> s</td>
+      <td> 输出字符串</td>
+    </tr>
+    <tr>
+      <td> p</td>
+      <td> 输出指针地址</td>
+    </tr>
+    <tr>
+      <td> lu</td>
+      <td>32 位无符号整数</td>
+    </tr>
+    <tr>
+      <td> llu</td>
+      <td>64 位无符号整数</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table class="reference notranslate">
+  <tbody>
+    <tr>
+      <th style="width: 18%"> flags（标识）</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td> -</td>
+      <td> 在给定的字段宽度内左对齐，默认是右对齐（参见 width 子说明符）。</td>
+    </tr>
+    <tr>
+      <td>+</td>
+      <td>
+        强制在结果之前显示加号或减号（+ 或 -），即正数前面会显示 +
+        号。默认情况下，只有负数前面会显示一个 - 号。
+      </td>
+    </tr>
+    <tr>
+      <td>空格</td>
+      <td>如果没有写入任何符号，则在该值前面插入一个空格。</td>
+    </tr>
+    <tr>
+      <td>#</td>
+      <td>
+        与 o、x 或 X 说明符一起使用时，非零值前面会分别显示 0、0x 或 0X。<br>
+        与 e、E 和 f
+        一起使用时，会强制输出包含一个小数点，即使后边没有数字时也会显示小数点。默认情况下，如果后边没有数字时候，不会显示显示小数点。<br>
+        与 g 或 G 一起使用时，结果与使用 e 或 E 时相同，但是尾部的零不会被移除。
+      </td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>
+        在指定填充 padding 的数字左边放置零（0），而不是空格（参见 width
+        子说明符）。
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table class="reference notranslate">
+  <tbody>
+    <tr>
+      <th style="width: 18%">width（宽度）</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td> (number)</td>
+      <td>
+        要输出的字符的最小数目。如果输出的值短于该数，结果会用空格填充。如果输出的值长于该数，结果不会被截断。
+      </td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>
+        宽度在 format
+        字符串中未指定，但是会作为附加整数值参数放置于要被格式化的参数之前。
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table class="reference notranslate">
+  <tbody>
+    <tr>
+      <th style="width: 18%">.precision（精度）</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td>.number</td>
+      <td>
+        对于整数说明符（d、i、o、u、x、X）：precision
+        指定了要写入的数字的最小位数。如果写入的值短于该数，结果会用前导零来填充。如果写入的值长于该数，结果不会被截断。精度为
+        0 意味着不写入任何字符。<br>
+        对于 e、E 和 f 说明符：要在小数点后输出的小数位数。<br>
+        对于 g 和 G 说明符：要输出的最大有效位数。<br>
+        对于 s:
+        要输出的最大字符数。默认情况下，所有字符都会被输出，直到遇到末尾的空字符。<br>
+        对于 c 类型：没有任何影响。<br>
+        当未指定任何精度时，默认为 1。如果指定时不带有一个显式值，则假定为 0。
+      </td>
+    </tr>
+    <tr>
+      <td>.*</td>
+      <td>
+        精度在 format
+        字符串中未指定，但是会作为附加整数值参数放置于要被格式化的参数之前。
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table class="reference notranslate">
+  <tbody>
+    <tr>
+      <th style="width: 18%">length（长度）</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td> h</td>
+      <td>
+        参数被解释为短整型或无符号短整型（仅适用于整数说明符：i、d、o、u、x 和
+        X）。
+      </td>
+    </tr>
+    <tr>
+      <td>l</td>
+      <td>
+        参数被解释为长整型或无符号长整型，适用于整数说明符（i、d、o、u、x 和
+        X）及说明符 c（表示一个宽字符）和 s（表示宽字符字符串）。
+      </td>
+    </tr>
+    <tr>
+      <td>L</td>
+      <td> 参数被解释为长双精度型（仅适用于浮点数说明符：e、E、f、g 和 G）。</td>
+    </tr>
+  </tbody>
+</table>
+<div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"> 不指定位数的情况下默认输出 6 位小数。<a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"> 如需在输入字符串的时候把空格也输入进去，请使用 <code>scanf("%[^\n]",str)</code>，这样 <code>scanf()</code> 在读到 <code>\n</code> 时会自行结束，<code>^</code> 含有非的意思，<code>%[^\n]</code> 即遇到字符 <code>\n</code> 结束。<a href="#fnref:2" rev="footnote"> ↩</a></span></li></ol></div></div>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>Just Prog
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://blog.justprog.eu.org/Notes/Tables-For-scanf()-printf()-Format/" title="scanf ()&#x2F;printf () 的输出用格式参数">https://blog.justprog.eu.org/Notes/Tables-For-scanf()-printf()-Format/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/OI/" rel="tag"><i class="fa fa-tag"></i> OI</a>
+              <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="fa fa-tag"></i> 笔记</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/Luogu/P1065-Homework-Scheduling-Scheme/" rel="prev" title="洛谷笔记 - P1065 [NOIP2006 提高组] 作业调度方案">
+                  <i class="fa fa-chevron-left"></i> 洛谷笔记 - P1065 [NOIP2006 提高组] 作业调度方案
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/Luogu/P2249-Half-Interval-Search-Example/" rel="next" title="洛谷笔记 - P2249 【深基 13. 例 1】查找">
+                  洛谷笔记 - P2249 【深基 13. 例 1】查找 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Just-Prog</span>
+</div>
+  <div class="powered-by">由 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & <span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <span class="exturl github-corner" data-url="aHR0cHM6Ly9naXRodWIuY29tL0p1c3QtUHJvZw==" title="Follow me on GitHub" aria-label="Follow me on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></span>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/jquery@3.6.3/dist/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/lozad@1.16.0/dist/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/pangu@4.0.7/dist/browser/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/hexo-theme-next@8.14.1/source/js/comments.js"></script><script src="https://unpkg.com/hexo-theme-next@8.14.1/source/js/utils.js"></script><script src="https://unpkg.com/hexo-theme-next@8.14.1/source/js/motion.js"></script><script src="https://unpkg.com/hexo-theme-next@8.14.1/source/js/next-boot.js"></script>
+
+  <script src="https://unpkg.com/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/hexo-theme-next@8.14.1/source/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="https://unpkg.com/hexo-theme-next@8.14.1/source/js/third-party/fancybox.js"></script>
+
+  <script src="https://unpkg.com/hexo-theme-next@8.14.1/source/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><link rel="stylesheet" href="https://unpkg.com/katex@0.16.4/dist/katex.min.css" integrity="sha256-gMRN4/6qeELzO1wbFa8qQLU8kfuF2dnAPiUoI0ATjx8=" crossorigin="anonymous">
+
+
+
+</body>
+</html>

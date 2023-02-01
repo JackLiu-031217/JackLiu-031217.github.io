@@ -6,7 +6,7 @@
   <link href="https://blog.justprog.eu.org/atom.xml" rel="self"/>
   
   <link href="https://blog.justprog.eu.org/"/>
-  <updated>2023-01-30T06:48:15.855Z</updated>
+  <updated>2023-02-01T02:09:27.239Z</updated>
   <id>https://blog.justprog.eu.org/</id>
   
   <author>
@@ -17,11 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>P1065 [NOIP2006 提高组] 作业调度方案</title>
+    <title>洛谷笔记 - P2249 【深基 13. 例 1】查找</title>
+    <link href="https://blog.justprog.eu.org/Luogu/P2249-Half-Interval-Search-Example/"/>
+    <id>https://blog.justprog.eu.org/Luogu/P2249-Half-Interval-Search-Example/</id>
+    <published>2023-02-01T01:01:19.000Z</published>
+    <updated>2023-02-01T02:09:27.239Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;练点基础。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="二分" scheme="https://blog.justprog.eu.org/tags/%E4%BA%8C%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>scanf ()/printf () 的输出用格式参数</title>
+    <link href="https://blog.justprog.eu.org/Notes/Tables-For-scanf()-printf()-Format/"/>
+    <id>https://blog.justprog.eu.org/Notes/Tables-For-scanf()-printf()-Format/</id>
+    <published>2023-02-01T00:17:42.000Z</published>
+    <updated>2023-02-01T02:04:27.915Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;因为正在做的题需要更快的 IO，所以转用了 &lt;code&gt;scanf()&lt;/code&gt; 与 &lt;code&gt;printf()&lt;/code&gt; 函数，记录下函数的参数。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
+    
+    <category term="笔记" scheme="https://blog.justprog.eu.org/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>洛谷笔记 - P1065 [NOIP2006 提高组] 作业调度方案</title>
     <link href="https://blog.justprog.eu.org/Luogu/P1065-Homework-Scheduling-Scheme/"/>
     <id>https://blog.justprog.eu.org/Luogu/P1065-Homework-Scheduling-Scheme/</id>
     <published>2023-01-30T06:10:29.000Z</published>
-    <updated>2023-01-30T06:48:15.855Z</updated>
+    <updated>2023-02-01T02:11:23.466Z</updated>
     
     
     <summary type="html">&lt;p&gt;题面很长，读了很久，没读懂，遂弃键盘，睡之&lt;/p&gt;
@@ -321,9 +359,9 @@
     
     <category term="NOIp 提高组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%8F%90%E9%AB%98%E7%BB%84/"/>
     
-    <category term="1998" scheme="https://blog.justprog.eu.org/tags/1998/"/>
-    
     <category term="数学" scheme="https://blog.justprog.eu.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="1998" scheme="https://blog.justprog.eu.org/tags/1998/"/>
     
     <category term="斐波那契" scheme="https://blog.justprog.eu.org/tags/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91/"/>
     
@@ -344,13 +382,13 @@
     
     <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
     
-    <category term="NOIp 普及组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%99%AE%E5%8F%8A%E7%BB%84/"/>
-    
-    <category term="1998" scheme="https://blog.justprog.eu.org/tags/1998/"/>
-    
     <category term="数学" scheme="https://blog.justprog.eu.org/tags/%E6%95%B0%E5%AD%A6/"/>
     
     <category term="分治" scheme="https://blog.justprog.eu.org/tags/%E5%88%86%E6%B2%BB/"/>
+    
+    <category term="NOIp 普及组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%99%AE%E5%8F%8A%E7%BB%84/"/>
+    
+    <category term="1998" scheme="https://blog.justprog.eu.org/tags/1998/"/>
     
   </entry>
   
@@ -435,54 +473,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>洛谷笔记 - P1443 马的遍历</title>
-    <link href="https://blog.justprog.eu.org/Luogu/P1443-Horse-Traversal/"/>
-    <id>https://blog.justprog.eu.org/Luogu/P1443-Horse-Traversal/</id>
-    <published>2022-06-08T23:15:23.000Z</published>
-    <updated>2023-01-30T06:48:15.902Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这道题是备考摸鱼的时候做的，应该能算&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9vaS13aWtpLm9yZy9zZWFyY2gvYmZzLw==&quot;&gt;广度优先搜索&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;的模板？&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
-    
-    <category term="搜索" scheme="https://blog.justprog.eu.org/tags/%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="广度优先搜索" scheme="https://blog.justprog.eu.org/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
-    
-    <category term="BFS" scheme="https://blog.justprog.eu.org/tags/BFS/"/>
-    
-    <category term="队列" scheme="https://blog.justprog.eu.org/tags/%E9%98%9F%E5%88%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>洛谷笔记 - P2058 [NOIP2016 普及组] 海港</title>
-    <link href="https://blog.justprog.eu.org/Luogu/P2058-Seaside-Bay-NOIP2016/"/>
-    <id>https://blog.justprog.eu.org/Luogu/P2058-Seaside-Bay-NOIP2016/</id>
-    <published>2022-04-10T06:57:00.000Z</published>
-    <updated>2023-01-30T07:00:19.383Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;span class=&quot;exturl&quot; data-url=&quot;aHR0cHM6Ly9vaS13aWtpLm9yZy9kcy9zdGFjay8=&quot;&gt;栈&lt;i class=&quot;fa fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/span&gt;真好用。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="OI" scheme="https://blog.justprog.eu.org/tags/OI/"/>
-    
-    <category term="模拟" scheme="https://blog.justprog.eu.org/tags/%E6%A8%A1%E6%8B%9F/"/>
-    
-    <category term="NOIp 普及组" scheme="https://blog.justprog.eu.org/tags/NOIp-%E6%99%AE%E5%8F%8A%E7%BB%84/"/>
-    
-    <category term="2016" scheme="https://blog.justprog.eu.org/tags/2016/"/>
     
   </entry>
   
